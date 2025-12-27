@@ -2,9 +2,9 @@
 
 # 🎯 Claude Codex Skills Directory
 
-**Koleksi Keahlian Engineering Elite untuk Claude AI**
+**Koleksi Keahlian Engineering Elite untuk Claude AI / ChatGPT Codex**
 
-Ubah Claude menjadi senior/lead engineer dengan pengalaman produksi 20+ tahun di 8 domain spesialisasi
+Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesialisasi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Jumlah Skills](https://img.shields.io/badge/Skills-8-brightgreen.svg)](#-daftar-skills)
@@ -20,7 +20,7 @@ Ubah Claude menjadi senior/lead engineer dengan pengalaman produksi 20+ tahun di
 
 ## Apa Ini?
 
-**Claude Codex Skills Directory** adalah koleksi komprehensif dari 8 sistem keahlian tingkat master yang mengubah Claude AI menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi 20+ tahun dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
+**Claude Codex Skills Directory** adalah koleksi komprehensif dari 8 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
 
 
 ## 📊 Statistik Singkat
@@ -31,7 +31,7 @@ Ubah Claude menjadi senior/lead engineer dengan pengalaman produksi 20+ tahun di
 | **Dokumen Referensi** | 64+ panduan komprehensif |
 | **Script Otomasi** | 8 helper tools |
 | **Teknologi yang Dicakup** | 30+ framework dan library |
-| **Level Keahlian** | 20+ tahun senior/lead engineer per skill |
+| **Level Keahlian** | Senior/lead engineer per skill |
 | **Dokumentasi** | 10.000+ baris pengetahuan teruji di produksi |
 
 
@@ -410,7 +410,7 @@ claude-codex-skills-directory/
 <summary><b>Klik untuk expand</b> - PyTorch, TensorFlow, LLMs, Computer Vision, NLP</summary>
 
 #### Overview
-Elite AI/ML Senior Engineer dengan pengalaman 20+ tahun (level DeepMind/OpenAI/Anthropic). Mengubah Claude menjadi AI researcher dan engineer kelas dunia yang mampu membangun sistem ML/DL produksi dari nol.
+Elite AI/ML Senior Engineer (level DeepMind/OpenAI/Anthropic). Mengubah Claude AI / ChatGPT Codex menjadi AI researcher dan engineer kelas dunia yang mampu membangun sistem ML/DL produksi dari nol.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti dengan framework keputusan
@@ -448,7 +448,7 @@ Elite AI/ML Senior Engineer dengan pengalaman 20+ tahun (level DeepMind/OpenAI/A
 <summary><b>Klik untuk expand</b> - TypeScript, Bun Runtime, Hono, Drizzle ORM, Docker</summary>
 
 #### Overview
-Senior/Lead Developer dengan pengalaman 20 tahun di JavaScript/TypeScript modern. Expert dalam optimasi Bun.js runtime, clean architecture, dan deployment Docker produksi. **Panduan tersedia dalam Bahasa Indonesia**.
+Senior/Lead Developer di JavaScript/TypeScript modern. Expert dalam optimasi Bun.js runtime, clean architecture, dan deployment Docker produksi. **Panduan tersedia dalam Bahasa Indonesia**.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti (Bahasa Indonesia)
@@ -485,7 +485,7 @@ Senior/Lead Developer dengan pengalaman 20 tahun di JavaScript/TypeScript modern
 <summary><b>Klik untuk expand</b> - Go, Chi Router, SQLX, Concurrency, Microservices</summary>
 
 #### Overview
-Golang Senior/Lead Developer dengan pengalaman 20+ tahun. Expert dalam Go idioms, pola concurrency, dan microservices production-grade. **Panduan tersedia dalam Bahasa Indonesia**.
+Golang Senior/Lead Developer. Expert dalam Go idioms, pola concurrency, dan microservices production-grade. **Panduan tersedia dalam Bahasa Indonesia**.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti (Bahasa Indonesia)
@@ -525,7 +525,7 @@ Golang Senior/Lead Developer dengan pengalaman 20+ tahun. Expert dalam Go idioms
 <summary><b>Klik untuk expand</b> - Vue 3, Nuxt 3, Composition API, TanStack Query, Pinia</summary>
 
 #### Overview
-Senior/Lead Vue.js Developer dengan pengalaman 20 tahun. Expert dalam pengembangan full-stack Nuxt 3, integrasi TanStack Query, dan optimasi performa. **Panduan tersedia dalam Bahasa Indonesia**.
+Senior/Lead Vue.js Developer. Expert dalam pengembangan full-stack Nuxt 3, integrasi TanStack Query, dan optimasi performa. **Panduan tersedia dalam Bahasa Indonesia**.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti (Bahasa Indonesia)
@@ -600,7 +600,7 @@ Ultimate RabbitMQ Expert (Top 0.01% knowledge). Master pola messaging advanced, 
 <summary><b>Klik untuk expand</b> - React, TanStack Router, Query, Table, Form, Start</summary>
 
 #### Overview
-Senior React Developer dengan pengalaman 20 tahun. Expert dalam ekosistem TanStack (Router, Query, Table, Form, Start) dan pola React modern. **Panduan tersedia dalam Bahasa Indonesia**.
+Senior React Developer. Expert dalam ekosistem TanStack (Router, Query, Table, Form, Start) dan pola React modern. **Panduan tersedia dalam Bahasa Indonesia**.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti (Bahasa Indonesia)
@@ -637,7 +637,7 @@ Senior React Developer dengan pengalaman 20 tahun. Expert dalam ekosistem TanSta
 <summary><b>Klik untuk expand</b> - Rust, Axum, SQLX, Memory Safety, Systems Programming</summary>
 
 #### Overview
-Senior/Lead Rust Developer dengan pengalaman 20+ tahun di systems programming. Expert dalam memory safety, zero-cost abstractions, dan Rust services produksi. **Panduan tersedia dalam Bahasa Indonesia**.
+Senior/Lead Rust Developer di systems programming. Expert dalam memory safety, zero-cost abstractions, dan Rust services produksi. **Panduan tersedia dalam Bahasa Indonesia**.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti (Bahasa Indonesia)
@@ -675,7 +675,7 @@ Senior/Lead Rust Developer dengan pengalaman 20+ tahun di systems programming. E
 <summary><b>Klik untuk expand</b> - SolidJS, Fine-Grained Reactivity, SolidStart, TanStack</summary>
 
 #### Overview
-Expert SolidJS Developer dengan pengalaman 20+ tahun. Master fine-grained reactivity, framework full-stack SolidStart, dan integrasi ekosistem TanStack. **Panduan tersedia dalam Bahasa Indonesia**.
+Expert SolidJS Developer. Master fine-grained reactivity, framework full-stack SolidStart, dan integrasi ekosistem TanStack. **Panduan tersedia dalam Bahasa Indonesia**.
 
 #### Isi Paket
 - **SKILL.md**: Panduan keahlian inti (Bahasa Indonesia)
@@ -818,9 +818,9 @@ Semua nama produk, logo, dan brand adalah properti pemilik masing-masing. Semua 
 ## ❓ FAQ (Pertanyaan yang Sering Diajukan)
 
 <details>
-<summary><b>Bagaimana cara menggunakan skills ini dengan Claude?</b></summary>
+<summary><b>Bagaimana cara menggunakan skills ini dengan Claude AI / ChatGPT Codex?</b></summary>
 
-Arahkan Claude ke direktori skill yang relevan (contoh: `ai-ml-mastery-skill/`) atau muat file spesifik. Claude akan mengadopsi persona dan expertise yang didefinisikan di `SKILL.md`. Anda juga bisa memuat beberapa skills untuk proyek lintas domain.
+Arahkan Claude AI / ChatGPT Codex ke direktori skill yang relevan (contoh: `ai-ml-mastery-skill/`) atau muat file spesifik. AI akan mengadopsi persona dan expertise yang didefinisikan di `SKILL.md`. Anda juga bisa memuat beberapa skills untuk proyek lintas domain.
 
 Contoh:
 ```
@@ -842,7 +842,7 @@ Ya! Muat beberapa skills untuk proyek kompleks. Contohnya:
 <details>
 <summary><b>Apakah skills ini cocok untuk production?</b></summary>
 
-Sangat cocok. Setiap skill mewujudkan pengalaman produksi 20+ tahun dengan:
+Sangat cocok. Setiap skill mewujudkan pengalaman produksi dengan:
 - Pola teruji dari sistem nyata
 - Anti-pattern terdokumentasi untuk menghindari kesalahan umum
 - Best practices security dan performance
@@ -912,7 +912,7 @@ Proyek ini dilisensikan di bawah **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2024 Claude Codex Skills Directory Contributors
+Copyright (c) 2024-2025 Axel Modra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -955,9 +955,9 @@ Lihat file [LICENSE](LICENSE) untuk teks lisensi lengkap.
 
 <div align="center">
 
-**Dibangun dengan pengetahuan dari 20+ tahun production engineering**
+**Dibangun dengan pengetahuan production engineering**
 
-Dibuat dengan ❤️ oleh komunitas
+Dibuat dengan ❤️ oleh Axel Modra
 
 🌏 **Bahasa Lain**: [English](README.md) | **Bahasa Indonesia** (halaman ini)
 

@@ -2,9 +2,9 @@
 
 # 🎯 Claude and Codex Skills Directory
 
-**Elite Engineering Mastery Collection for Claude AI**
+**Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude into a senior/lead engineer with 20+ years of production experience across 8 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 8 specialized domains
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 [![Skills Count](https://img.shields.io/badge/Skills-8-brightgreen.svg)](#-skills-overview)
@@ -20,7 +20,7 @@ Transform Claude into a senior/lead engineer with 20+ years of production experi
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery-level expertise systems that transform Claude AI into a world-class senior/lead engineer across multiple technology domains. Each skill embodies 20+ years of production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
@@ -31,7 +31,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
 | **Reference Docs** | 64+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
 | **Technologies Covered** | 30+ frameworks and libraries |
-| **Expertise Level** | 20+ years senior/lead engineer per skill |
+| **Expertise Level** | Senior/lead engineer per skill |
 | **Documentation** | 10,000+ lines of battle-tested knowledge |
 
 
@@ -409,7 +409,7 @@ claude-codex-skills-directory/
 <summary><b>Click to expand</b> - PyTorch, TensorFlow, LLMs, Computer Vision, NLP</summary>
 
 #### Overview
-Elite AI/ML Senior Engineer with 20+ years experience (DeepMind/OpenAI/Anthropic level). Transforms Claude into a world-class AI researcher and engineer capable of building production ML/DL systems from scratch.
+Elite AI/ML Senior Engineer (DeepMind/OpenAI/Anthropic level). Transforms Claude AI / ChatGPT Codex into a world-class AI researcher and engineer capable of building production ML/DL systems from scratch.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide with decision frameworks
@@ -447,7 +447,7 @@ Elite AI/ML Senior Engineer with 20+ years experience (DeepMind/OpenAI/Anthropic
 <summary><b>Click to expand</b> - TypeScript, Bun Runtime, Hono, Drizzle ORM, Docker</summary>
 
 #### Overview
-Senior/Lead Developer with 20 years experience in modern JavaScript/TypeScript. Expert in Bun.js runtime optimization, clean architecture, and production Docker deployments. Guides available in Indonesian.
+Senior/Lead Developer in modern JavaScript/TypeScript. Expert in Bun.js runtime optimization, clean architecture, and production Docker deployments. Guides available in Indonesian.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
@@ -484,7 +484,7 @@ Senior/Lead Developer with 20 years experience in modern JavaScript/TypeScript. 
 <summary><b>Click to expand</b> - Go, Chi Router, SQLX, Concurrency, Microservices</summary>
 
 #### Overview
-Golang Senior/Lead Developer with 20+ years experience. Expert in Go idioms, concurrency patterns, and production-grade microservices. Guides available in Indonesian.
+Golang Senior/Lead Developer. Expert in Go idioms, concurrency patterns, and production-grade microservices. Guides available in Indonesian.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
@@ -524,7 +524,7 @@ Golang Senior/Lead Developer with 20+ years experience. Expert in Go idioms, con
 <summary><b>Click to expand</b> - Vue 3, Nuxt 3, Composition API, TanStack Query, Pinia</summary>
 
 #### Overview
-Senior/Lead Vue.js Developer with 20 years experience. Expert in Nuxt 3 full-stack development, TanStack Query integration, and performance optimization. Guides available in Indonesian.
+Senior/Lead Vue.js Developer. Expert in Nuxt 3 full-stack development, TanStack Query integration, and performance optimization. Guides available in Indonesian.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
@@ -599,7 +599,7 @@ Ultimate RabbitMQ Expert (Top 0.01% knowledge). Master of advanced messaging pat
 <summary><b>Click to expand</b> - React, TanStack Router, Query, Table, Form, Start</summary>
 
 #### Overview
-Senior React Developer with 20 years experience. Expert in the TanStack ecosystem (Router, Query, Table, Form, Start) and modern React patterns. Guides available in Indonesian.
+Senior React Developer. Expert in the TanStack ecosystem (Router, Query, Table, Form, Start) and modern React patterns. Guides available in Indonesian.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
@@ -636,7 +636,7 @@ Senior React Developer with 20 years experience. Expert in the TanStack ecosyste
 <summary><b>Click to expand</b> - Rust, Axum, SQLX, Memory Safety, Systems Programming</summary>
 
 #### Overview
-Senior/Lead Rust Developer with 20+ years experience in systems programming. Expert in memory safety, zero-cost abstractions, and production Rust services. Guides available in Indonesian.
+Senior/Lead Rust Developer in systems programming. Expert in memory safety, zero-cost abstractions, and production Rust services. Guides available in Indonesian.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
@@ -674,7 +674,7 @@ Senior/Lead Rust Developer with 20+ years experience in systems programming. Exp
 <summary><b>Click to expand</b> - SolidJS, Fine-Grained Reactivity, SolidStart, TanStack</summary>
 
 #### Overview
-Expert SolidJS Developer with 20+ years experience. Master of fine-grained reactivity, SolidStart full-stack framework, and TanStack ecosystem integration. Guides available in Indonesian.
+Expert SolidJS Developer. Master of fine-grained reactivity, SolidStart full-stack framework, and TanStack ecosystem integration. Guides available in Indonesian.
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
@@ -817,9 +817,9 @@ All product names, logos, and brands are property of their respective owners. Al
 ## ❓ FAQ
 
 <details>
-<summary><b>How do I use these skills with Claude?</b></summary>
+<summary><b>How do I use these skills with Claude AI / ChatGPT Codex?</b></summary>
 
-Point Claude to the relevant skill directory (e.g., `ai-ml-mastery-skill/`) or load specific files. Claude will adopt the persona and expertise defined in `SKILL.md`. You can also load multiple skills for cross-domain projects.
+Point Claude AI / ChatGPT Codex to the relevant skill directory (e.g., `ai-ml-mastery-skill/`) or load specific files. The AI will adopt the persona and expertise defined in `SKILL.md`. You can also load multiple skills for cross-domain projects.
 
 Example:
 ```
@@ -841,7 +841,7 @@ Yes! Load multiple skills for complex projects. For example:
 <details>
 <summary><b>Are these skills suitable for production use?</b></summary>
 
-Absolutely. Each skill embodies 20+ years of production experience with:
+Absolutely. Each skill embodies production experience with:
 - Battle-tested patterns from real systems
 - Anti-patterns documented to avoid common mistakes
 - Security and performance best practices
@@ -911,7 +911,7 @@ This project is licensed under the **MIT License**.
 ```
 MIT License
 
-Copyright (c) 2024 Claude Codex Skills Directory Contributors
+Copyright (c) 2024-2025 Axel Modra
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -954,9 +954,9 @@ See [LICENSE](LICENSE) file for full license text.
 
 <div align="center">
 
-**Built with knowledge from 20+ years of production engineering**
+**Built with production engineering knowledge**
 
-Made with ❤️ by the community
+Made with ❤️ by Axel Modra
 
 🌏 **Languages**: **English** (this page) | [Bahasa Indonesia](README.id.md)
 
