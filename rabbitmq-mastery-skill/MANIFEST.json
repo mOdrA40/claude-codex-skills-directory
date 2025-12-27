@@ -1,0 +1,90 @@
+{
+  "skill_name": "rabbitmq-master-skill",
+  "version": "20251227_034854",
+  "created_at": "2025-12-27T03:48:54.373858",
+  "description": "RabbitMQ Master Skill - Production-grade messaging expertise",
+  "author": "Claude AI",
+  "statistics": {
+    "total_files": 10,
+    "total_size_bytes": 135750,
+    "categories": {
+      "markdown": {
+        "count": 7,
+        "size": 104889
+      },
+      "python": {
+        "count": 3,
+        "size": 30861
+      },
+      "other": {
+        "count": 0,
+        "size": 0
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "SKILL.md",
+      "size": 11115,
+      "checksum": "b4729c920ac50b019d2e6bc53cb40994c89318922da7dffacfaa2bee8bc64023"
+    },
+    {
+      "path": "scripts/package_skill.py",
+      "size": 8375,
+      "checksum": "c913316dc4793b367008ae266ca0d89842ee69f06da5f59f811e2a7bee6c04be"
+    },
+    {
+      "path": "scripts/async_publisher.py",
+      "size": 13219,
+      "checksum": "036244dad5043d0068c8a9cad4d293880c16d5437bf169f2b8c90279bddcd7bf"
+    },
+    {
+      "path": "scripts/connection_pool.py",
+      "size": 9267,
+      "checksum": "2bd1d60857ac30902a3ca708c0018af0243047b5db2fa4625d65e39446ed710a"
+    },
+    {
+      "path": "references/clustering.md",
+      "size": 12797,
+      "checksum": "8d1ece90581cc1e90a92318a2382902bc334a82d85a0c4adb085e48d58353e12"
+    },
+    {
+      "path": "references/monitoring.md",
+      "size": 20386,
+      "checksum": "7d1ead2ff97c4c8196c45c5b9f26ad05006213dff9eaad4e379ef6503f681ae2"
+    },
+    {
+      "path": "references/performance.md",
+      "size": 6894,
+      "checksum": "3ff9eb7c7061ec3ae772e8fb59b6173af0eece7ff09a08d6d8738e4d33eae8e7"
+    },
+    {
+      "path": "references/patterns.md",
+      "size": 27187,
+      "checksum": "55fcc112c216a488bbb601665d2aa808ba242bfe6ea607ce56d3dd39ddb9ec89"
+    },
+    {
+      "path": "references/troubleshooting.md",
+      "size": 13728,
+      "checksum": "28e377e4709b62dcbfd864aee670d428ab776539f03d5000d18673c91f1937ee"
+    },
+    {
+      "path": "references/security.md",
+      "size": 12782,
+      "checksum": "6a8d070a5f2ac29303f2e6dea28ed9fe7d375125bedbe06977daa9001b009f00"
+    }
+  ],
+  "entry_point": "SKILL.md",
+  "required_tools": [
+    "bash",
+    "python3"
+  ],
+  "tags": [
+    "rabbitmq",
+    "messaging",
+    "distributed-systems",
+    "high-availability",
+    "performance",
+    "security"
+  ]
+}
