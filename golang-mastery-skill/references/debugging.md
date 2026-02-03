@@ -50,7 +50,7 @@ go tool trace trace.out
 ## Race Detection
 
 ```bash
-# WAJIB sebelum merge PR
+# Strongly recommended before merging concurrency changes
 go test -race ./...
 go build -race ./cmd/api
 ```
@@ -100,7 +100,7 @@ fmt.Printf("Alloc = %v MiB\n", m.Alloc/1024/1024)
 ### Common Leak Patterns
 
 ```go
-// ❌ LEAK: Goroutine tidak exit
+// ❌ LEAK: goroutine never exits
 go func() {
     for { data := <-ch; process(data) }  // Stuck forever
 }()
@@ -186,6 +186,13 @@ dlv attach <pid>
 
 ## Production Debugging
 
+### Safety note
+
+Never expose `net/http/pprof` to the public internet. If you enable pprof in production:
+- bind to localhost, or
+- protect it with auth / network policy, or
+- serve it on an admin port not reachable from the outside.
+
 ### pprof Endpoints
 
 ```bash
@@ -210,10 +217,10 @@ func healthHandler(w http.ResponseWriter, r *http.Request) {
 
 | Bug | Pattern | Fix |
 |-----|---------|-----|
-| Nil pointer | `user.Name` tanpa check | `if user != nil` |
-| Index out of range | `items[5]` tanpa check | `if len(items) > 5` |
-| Close nil channel | `close(ch)` tanpa check | `if ch != nil` |
-| Concurrent map | `m["a"] = 1` concurrent | `sync.Map` atau mutex |
+| Nil pointer | `user.Name` without a nil check | `if user != nil` |
+| Index out of range | `items[5]` without bounds check | `if len(items) > 5` |
+| Close nil channel | `close(ch)` without a nil check | ensure channel is initialized (prefer ownership rules; avoid closing nil) |
+| Concurrent map | `m["a"] = 1` concurrently | `sync.Map` or a mutex |
 | Defer arg eval | `defer fmt.Println(i)` | `defer func(n int){...}(i)` |
 
 ## Quick Debug Checklist
@@ -225,3 +232,17 @@ func healthHandler(w http.ResponseWriter, r *http.Request) {
 5. ✅ Nil checks before dereference?
 6. ✅ Context cancellation for goroutines?
 7. ✅ defer Close() for resources?
+
+## “Bad vs Good” (debuggability)
+
+```go
+// ❌ BAD: swallowing root cause
+if err != nil {
+    return errors.New("failed to save")
+}
+
+// ✅ GOOD: keep the cause while adding context
+if err != nil {
+    return fmt.Errorf("save user: %w", err)
+}
+```

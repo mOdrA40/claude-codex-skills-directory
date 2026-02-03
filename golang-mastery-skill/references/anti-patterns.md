@@ -1,20 +1,20 @@
 # Anti-Patterns & Bug Traps
 
-Pola-pola yang sering menyebabkan bug di production.
+Patterns that frequently cause production bugs. Prefer these “guardrails” during code review.
 
 ## Concurrency
 
 ### Loop Variable Capture
 
 ```go
-// ❌ Semua goroutine dapat nilai terakhir
+// ❌ BAD: all goroutines see the last value
 for _, item := range items {
     go func() {
-        process(item)  // item = nilai terakhir!
+        process(item) // item = last value!
     }()
 }
 
-// ✅ Pass as parameter
+// ✅ GOOD: pass as parameter
 for _, item := range items {
     go func(i Item) {
         process(i)
@@ -30,7 +30,7 @@ var cache = make(map[string]string)
 go func() { cache["a"] = "1" }()
 go func() { cache["b"] = "2" }()
 
-// ✅ Use sync.RWMutex atau sync.Map
+// ✅ GOOD: use sync.RWMutex or sync.Map
 var cache sync.Map
 cache.Store("key", "value")
 ```
@@ -38,32 +38,51 @@ cache.Store("key", "value")
 ### Goroutine Leak
 
 ```go
-// ❌ Blocks forever
+// ❌ BAD: blocks forever (leak)
 ch := make(chan int)
 go func() {
-    ch <- 1  // No receiver = leak
+    ch <- 1 // no receiver = leak
 }()
 
-// ✅ Buffered atau context
+// ✅ GOOD: buffered channel OR context-driven shutdown
 ch := make(chan int, 1)
 ```
 
 ### Defer in Loop
 
 ```go
-// ❌ Files tidak ditutup sampai return
+// ❌ BAD: files won't close until the outer function returns
 for _, path := range paths {
     f, _ := os.Open(path)
-    defer f.Close()  // All stacked!
+    defer f.Close() // all stacked!
 }
 
-// ✅ Extract ke function
+// ✅ GOOD: move into a helper function
 for _, path := range paths {
     processFile(path)
 }
 func processFile(path string) {
     f, _ := os.Open(path)
     defer f.Close()
+}
+```
+
+### Ignoring Context in Loops
+
+```go
+// ❌ BAD: ignores cancellation, keeps burning CPU/IO
+for {
+    doWork()
+}
+
+// ✅ GOOD: stop condition is explicit
+for {
+    select {
+    case <-ctx.Done():
+        return ctx.Err()
+    default:
+        doWork()
+    }
 }
 ```
 
@@ -77,7 +96,7 @@ func getFirst3(data []int) []int {
     return data[:3]  // Shares array!
 }
 
-// ✅ Copy
+// ✅ GOOD: copy
 func getFirst3(data []int) []int {
     result := make([]int, 3)
     copy(result, data[:3])
@@ -90,14 +109,14 @@ func getFirst3(data []int) []int {
 ### Shadow Error
 
 ```go
-// ❌ Outer err tidak di-set
+// ❌ BAD: outer err never updated
 var err error
 if condition {
-    result, err := doSomething()  // Shadows!
+    result, err := doSomething() // shadows!
 }
-return err  // Selalu nil
+return err // always nil
 
-// ✅ Assign to existing
+// ✅ GOOD: assign to existing variable
 var err error
 if condition {
     var result Result
@@ -108,13 +127,13 @@ if condition {
 ### nil Interface Trap
 
 ```go
-// ❌ Returns non-nil interface
+// ❌ BAD: returns non-nil interface
 func process() error {
     var err *MyError = nil
-    return err  // err != nil is TRUE!
+    return err // err != nil is TRUE!
 }
 
-// ✅ Return nil explicitly
+// ✅ GOOD: return nil explicitly
 if err == nil {
     return nil
 }
@@ -125,11 +144,11 @@ if err == nil {
 ### Body Not Closed
 
 ```go
-// ❌ Connection leak
+// ❌ BAD: connection leak
 resp, _ := http.Get(url)
 // Forgot resp.Body.Close()
 
-// ✅ Always close
+// ✅ GOOD: always close and drain
 resp, _ := http.Get(url)
 defer resp.Body.Close()
 io.Copy(io.Discard, resp.Body)  // Drain for reuse
@@ -141,8 +160,20 @@ io.Copy(io.Discard, resp.Body)  // Drain for reuse
 // ❌ Hangs forever
 http.Get(url)
 
-// ✅ Custom client
+// ✅ GOOD: custom client with timeout
 client := &http.Client{Timeout: 30 * time.Second}
+```
+
+### Mutating `http.DefaultTransport`
+
+```go
+// ❌ BAD: global side-effect; surprises other packages/tests
+http.DefaultTransport.(*http.Transport).MaxIdleConnsPerHost = 200
+
+// ✅ GOOD: clone and own your transport
+base := http.DefaultTransport.(*http.Transport).Clone()
+base.MaxIdleConnsPerHost = 200
+client := &http.Client{Transport: base}
 ```
 
 ## Database
@@ -154,7 +185,7 @@ client := &http.Client{Timeout: 30 * time.Second}
 rows, _ := db.Query("SELECT ...")
 // Forgot rows.Close()
 
-// ✅ Always close
+// ✅ GOOD: always close and check rows.Err
 rows, _ := db.Query("SELECT ...")
 defer rows.Close()
 for rows.Next() { }
@@ -166,14 +197,14 @@ rows.Err()  // Check error
 ### time.After Leak
 
 ```go
-// ❌ Timer not GC'd in loop
+// ❌ BAD: allocates a timer every loop iteration
 for {
     select {
     case <-time.After(time.Second):
     }
 }
 
-// ✅ Reuse timer
+// ✅ GOOD: reuse timer
 timer := time.NewTimer(time.Second)
 for {
     select {

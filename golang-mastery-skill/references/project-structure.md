@@ -1,93 +1,47 @@
-# Project Structure
+# Project Structure (Pragmatic, Not Dogmatic)
 
-Struktur folder yang battle-tested untuk berbagai skala project.
+The best structure is the smallest one that keeps boundaries clear.
 
-## Small Service (< 2000 LOC)
-
-```
-myservice/
-├── main.go              # Entry point, wiring
-├── handler.go           # HTTP handlers
-├── service.go           # Business logic
-├── repository.go        # Data access
-├── model.go             # Domain types
-├── config.go            # Configuration
-├── Dockerfile
-├── docker-compose.yml
-└── go.mod
-```
-
-## Medium Service (2000-10000 LOC)
+## Small Project (single binary, low complexity)
 
 ```
-myservice/
-├── cmd/
-│   └── api/
-│       └── main.go           # Entry point
-├── internal/                  # Private packages
-│   ├── config/
-│   ├── handler/               # HTTP layer
-│   ├── service/               # Business logic
-│   ├── repository/            # Data access
-│   ├── model/                 # Domain entities
-│   └── pkg/                   # Shared utilities
-├── pkg/                       # Public packages
-├── migrations/
-├── Dockerfile
-├── docker-compose.yml
-├── Makefile
-└── go.mod
+myapp/
+  main.go
+  go.mod
+  internal/
+    app/        # wiring, config loading
+    http/       # handlers + middleware
+    store/      # DB access
+    domain/     # core types + rules (optional)
 ```
 
-## Large/Monorepo (10000+ LOC)
+## Medium Project (multiple binaries or clear layers)
 
 ```
-platform/
-├── cmd/                       # Semua executables
-│   ├── api-gateway/
-│   ├── user-service/
-│   └── worker/
-├── internal/                  # Private shared code
-│   ├── platform/              # Infrastructure (db, cache, queue)
-│   ├── user/                  # User domain
-│   └── order/                 # Order domain
-├── pkg/                       # Public shared packages
-├── api/                       # API definitions (openapi, proto)
-├── deployments/               # Docker, k8s, terraform
-├── Makefile
-└── go.mod
+myapp/
+  cmd/
+    api/
+      main.go
+    worker/
+      main.go
+  internal/
+    app/        # composition root
+    transport/  # http/grpc/cli adapters
+    service/    # orchestration/use-cases
+    domain/     # core types + rules (keep deps minimal)
+    store/      # postgres/redis/etc implementations
+  pkg/          # only if you truly need exported reusable packages
 ```
 
-## File Naming
+## Guidelines
 
-```go
-// ✅ BENAR
-user_service.go      // Snake case
-user_service_test.go // Test file
+- Use `internal/` for packages that should not be imported outside the module.
+- Avoid `internal/pkg` “misc utilities” unless you can name it by responsibility (e.g. `internal/clock`, `internal/validate`).
+- Prefer dependency direction: transport/adapters → service/use-cases → domain → store interfaces (implementations live in `store/`).
+- Keep package names short, lowercase, and responsibility-based (e.g. `user`, `auth`, `billing`).
 
-// ❌ SALAH
-userService.go       // Camel case
-user-service.go      // Kebab case
-```
+## When to introduce interfaces
 
-## Package Guidelines
+- Define interfaces at the consumer boundary (where you need substitution/mocking).
+- Prefer “accept interface, return concrete”.
 
-```go
-// ✅ Singular, lowercase
-package user
-package order
-
-// ❌ SALAH
-package users     // Plural
-package userService // Camel case
-```
-
-## Dependency Direction
-
-```
-handler → service → repository → model
-    ↓         ↓          ↓
-  model     model      model
-```
-
-Tidak boleh: child → parent (circular dependency)

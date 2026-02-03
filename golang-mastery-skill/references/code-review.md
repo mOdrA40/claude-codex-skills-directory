@@ -1,39 +1,39 @@
 # Code Review Checklist
 
-## Quick Scan (2 menit)
+## Quick Scan (2 minutes)
 
 ```
 □ File > 500 lines? → Split
 □ Function > 50 lines? → Extract
 □ Nesting > 3 levels? → Flatten
-□ `_ = someFunc()` untuk error? → BLOCKER
-□ `panic()` di non-main? → BLOCKER
-□ No tests untuk logic baru? → Request tests
+□ `_ = someFunc()` on an error-returning call? → BLOCKER
+□ `panic()` in non-entrypoint code? → BLOCKER (unless truly impossible invariant)
+□ No tests for new logic? → Request tests
 ```
 
 ## Correctness
 
 ```go
-// ❌ Nil panic
-name := user.Name  // user bisa nil
+// ❌ BAD: nil panic
+name := user.Name // user may be nil
 
-// ✅ Check first
+// ✅ GOOD: check first
 if user == nil { return ErrNilUser }
 
-// ❌ Index out of range
-items[0]  // len bisa 0
+// ❌ BAD: index out of range
+items[0] // len may be 0
 
-// ✅ Check length
+// ✅ GOOD: check length
 if len(items) > 0 { first := items[0] }
 ```
 
 ## Error Handling
 
 ```go
-// ❌ BLOCKER - Error ignored
+// ❌ BLOCKER: error ignored
 data, _ := json.Marshal(user)
 
-// ✅ Handle semua error
+// ✅ GOOD: handle all errors
 data, err := json.Marshal(user)
 if err != nil {
     return fmt.Errorf("marshal: %w", err)
@@ -43,40 +43,76 @@ if err != nil {
 ## Security
 
 ```go
-// ❌ SQL Injection
+// ❌ BAD: SQL injection
 query := fmt.Sprintf("SELECT * FROM users WHERE id = %s", input)
 
-// ✅ Parameterized
+// ✅ GOOD: parameterized query
 db.Query("SELECT * FROM users WHERE id = $1", input)
 
-// ❌ Hardcoded secret
+// ❌ BAD: hardcoded secret
 apiKey := "sk-live-xxx"
 
-// ✅ Environment
+// ✅ GOOD: environment / secret manager
 apiKey := os.Getenv("API_KEY")
 ```
 
 ## Performance
 
 ```go
-// ❌ N+1 queries
+// ❌ BAD: N+1 queries
 for _, u := range users {
     orders, _ := db.GetOrders(u.ID)  // N queries!
 }
 
-// ✅ Batch atau JOIN
+// ✅ GOOD: batch or JOIN
 orders := db.GetOrdersForUsers(userIDs)  // 1 query
 ```
 
 ## Testing
 
 ```go
-// ❌ Unclear test name
+// ❌ BAD: unclear test name
 func TestUser(t *testing.T)
 
-// ✅ Descriptive
+// ✅ GOOD: descriptive
 func TestCreateUser_WithValidInput_ReturnsUser(t *testing.T)
 func TestCreateUser_WithDuplicateEmail_ReturnsError(t *testing.T)
+```
+
+## Concurrency (common production blockers)
+
+```go
+// ❌ BAD: goroutine leak (no stop condition)
+go func() {
+    for v := range ch {
+        process(v)
+    }
+}()
+
+// ✅ GOOD: explicit ownership and shutdown via context
+go func() {
+    for {
+        select {
+        case <-ctx.Done():
+            return
+        case v, ok := <-ch:
+            if !ok { return }
+            process(v)
+        }
+    }
+}()
+```
+
+## Timeouts (outbound IO)
+
+```go
+// ❌ BAD: can hang forever
+resp, err := http.Get(url)
+
+// ✅ GOOD: request-scoped context + hard client timeout
+client := &http.Client{Timeout: 10 * time.Second}
+req, _ := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+resp, err := client.Do(req)
 ```
 
 ## Response Templates
@@ -88,13 +124,13 @@ LGTM! ✅
 
 **Request Changes:**
 ```
-Perlu revisi:
+Please revise:
 1. [issue] - [suggested fix]
 ```
 
 **Blocker:**
 ```
 ⛔ BLOCKER: [issue]
-Risk: [apa yang bisa terjadi]
+Risk: [what can go wrong in production]
 Fix: [suggestion]
 ```

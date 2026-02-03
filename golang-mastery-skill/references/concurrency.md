@@ -5,7 +5,9 @@
 2. [Channel Patterns](#channel-patterns)
 3. [Worker Pool](#worker-pool)
 4. [Context Cancellation](#context-cancellation)
-5. [Race Condition Prevention](#race-condition-prevention)
+5. [Errgroup](#errgroup)
+6. [Race Condition Prevention](#race-condition-prevention)
+7. [Channel Ownership](#channel-ownership)
 
 ## Mutex Patterns
 
@@ -52,10 +54,10 @@ func (c *Cache) Set(key string, value interface{}) {
 // ❌ DEADLOCK RISK
 func transfer(from, to *Account, amount int) {
     from.mu.Lock()
-    to.mu.Lock()  // Deadlock jika lock sebaliknya
+    to.mu.Lock() // deadlock risk if reversed elsewhere
 }
 
-// ✅ SAFE - consistent order by ID
+// ✅ SAFE: consistent order by ID
 func transfer(from, to *Account, amount int) {
     first, second := from, to
     if from.ID > to.ID {
@@ -221,6 +223,34 @@ func fetchWithTimeout(ctx context.Context, url string) ([]byte, error) {
 }
 ```
 
+## Errgroup
+
+Use `errgroup` when you want:
+- bounded concurrency,
+- cancellation propagation,
+- first error wins.
+
+```go
+g, ctx := errgroup.WithContext(ctx)
+sem := make(chan struct{}, 10) // limit concurrency
+
+for _, item := range items {
+    item := item // capture
+    g.Go(func() error {
+        select {
+        case <-ctx.Done():
+            return ctx.Err()
+        case sem <- struct{}{}:
+        }
+        defer func() { <-sem }()
+        return process(ctx, item)
+    })
+}
+if err := g.Wait(); err != nil {
+    return err
+}
+```
+
 ## Race Condition Prevention
 
 ### Common Bugs
@@ -250,4 +280,29 @@ go func() { m.Store("a", 1) }()
 ```bash
 go test -race ./...
 go build -race ./cmd/api
+```
+
+## Channel Ownership
+
+Rule of thumb:
+- The sender closes the channel.
+- Receivers should treat close as a signal, not a thing they control.
+
+```go
+// ❌ BAD: receiver closes (often races with other senders)
+go func() {
+    close(jobs)
+}()
+
+// ✅ GOOD: owner closes after all sends are done
+go func() {
+    defer close(jobs)
+    for _, j := range work {
+        select {
+        case <-ctx.Done():
+            return
+        case jobs <- j:
+        }
+    }
+}()
 ```

@@ -1,4 +1,4 @@
-# Design Patterns untuk Go
+# Design Patterns for Go
 
 ## Table of Contents
 1. [Dependency Injection](#dependency-injection)
@@ -15,7 +15,7 @@
 ### Interface-Based DI (RECOMMENDED)
 
 ```go
-// domain/user.go - Define interface di consumer
+// domain/user.go - Define the interface at the consumer boundary
 type UserRepository interface {
     GetByID(ctx context.Context, id string) (*User, error)
     Create(ctx context.Context, user *User) error
@@ -23,7 +23,7 @@ type UserRepository interface {
 
 // usecase/user/service.go - Depend on interface
 type UserService struct {
-    repo UserRepository  // Interface, bukan concrete
+    repo UserRepository  // interface, not concrete
 }
 
 func NewUserService(repo UserRepository) *UserService {
@@ -156,7 +156,7 @@ func NewServer(opts ...Option) *Server {
     return s
 }
 
-// Usage - clean dan readable
+// Usage - clean and readable
 server := NewServer(
     WithHost("0.0.0.0"),
     WithPort(9000),
@@ -448,8 +448,8 @@ http.Handle("/api/", chain(apiHandler))
 
 | Anti-Pattern | Problem | Better Approach |
 |--------------|---------|-----------------|
-| God Object | Satu struct melakukan semua | Split ke focused structs |
+| God Object | One struct does everything | Split into focused structs |
 | Singleton | Hard to test, hidden deps | Dependency Injection |
 | Service Locator | Hidden dependencies | Explicit constructor injection |
 | Premature Abstraction | Over-engineering | YAGNI - abstract when needed |
-| Deep Inheritance | Go tidak punya inheritance | Composition over inheritance |
+| Deep Inheritance | Go has no inheritance | Composition over inheritance |

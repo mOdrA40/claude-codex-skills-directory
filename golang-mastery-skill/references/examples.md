@@ -1,6 +1,6 @@
 # Real-World Code Examples
 
-Contoh kode production-ready yang bisa langsung digunakan.
+Production-oriented examples you can adapt and copy/paste safely (tune to your environment).
 
 ## Table of Contents
 1. [HTTP Server Skeleton](#http-server-skeleton)
@@ -11,6 +11,8 @@ Contoh kode production-ready yang bisa langsung digunakan.
 6. [Graceful Shutdown](#graceful-shutdown)
 7. [Config Management](#config-management)
 8. [Custom Error Types](#custom-error-types)
+9. [Idempotent Endpoint Skeleton](#idempotent-endpoint-skeleton)
+10. [Queue Consumer (Bounded + Idempotent)](#queue-consumer-bounded--idempotent)
 
 ---
 
@@ -798,5 +800,80 @@ func WriteError(w http.ResponseWriter, err *AppError) {
     w.Header().Set("Content-Type", "application/json")
     w.WriteHeader(err.Status)
     json.NewEncoder(w).Encode(err)
+}
+```
+
+---
+
+## Idempotent Endpoint Skeleton
+
+Use this for “money-moving” / side-effect endpoints. The core idea: require an idempotency key, store it, and make duplicates safe.
+
+```go
+// internal/http/handlers/payments.go
+// NOTE: shape only; persistence and auth omitted.
+func (h *Handler) CreatePayment(w http.ResponseWriter, r *http.Request) {
+	ctx := r.Context()
+
+	idemKey := r.Header.Get("Idempotency-Key")
+	if idemKey == "" {
+		http.Error(w, "missing Idempotency-Key", http.StatusBadRequest)
+		return
+	}
+
+	req, err := decodePaymentRequest(r.Body)
+	if err != nil {
+		http.Error(w, "invalid request", http.StatusBadRequest)
+		return
+	}
+
+	res, err := h.payments.Create(ctx, idemKey, req)
+	if err != nil {
+		// Map error centrally in a real codebase (see http-api.md + errors.md)
+		http.Error(w, "failed", http.StatusInternalServerError)
+		return
+	}
+
+	writeJSON(w, http.StatusCreated, res)
+}
+```
+
+---
+
+## Queue Consumer (Bounded + Idempotent)
+
+This pattern prevents “goroutine explosions”, supports cancellation, and handles at-least-once delivery.
+
+```go
+// internal/consumer/consumer.go
+func Consume(ctx context.Context, msgs <-chan Message, workers int, handle func(context.Context, Message) error) error {
+	g, ctx := errgroup.WithContext(ctx)
+	sem := make(chan struct{}, workers)
+
+	for {
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case m, ok := <-msgs:
+			if !ok {
+				return g.Wait()
+			}
+
+			// Acquire capacity (backpressure)
+			select {
+			case <-ctx.Done():
+				return ctx.Err()
+			case sem <- struct{}{}:
+			}
+
+			m := m
+			g.Go(func() error {
+				defer func() { <-sem }()
+
+				// ✅ Idempotency: dedup by message ID / idempotency key in storage.
+				return handle(ctx, m)
+			})
+		}
+	}
 }
 ```
