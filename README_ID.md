@@ -46,7 +46,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>PyTorch • TensorFlow • LLMs</sub>
       <br/>
-      <a href="ai-ml-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/ai-ml-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/bun.svg" width="80" height="80" alt="Bun.js Mastery"/>
@@ -55,7 +55,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>TypeScript • Hono • Drizzle</sub>
       <br/>
-      <a href="bunjs-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/bunjs-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/golang.svg" width="80" height="80" alt="Golang Mastery"/>
@@ -64,7 +64,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>Chi • SQLX • Concurrency</sub>
       <br/>
-      <a href="golang-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/golang-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/nuxt.svg" width="80" height="80" alt="Nuxt.js Mastery"/>
@@ -73,7 +73,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>Vue 3 • Nuxt 3 • Query</sub>
       <br/>
-      <a href="nuxtjs-mastery-skill/">📚 Docs</a>
+      <a href="frontend-skills/nuxtjs-mastery-skill/">📚 Docs</a>
     </td>
   </tr>
   <tr>
@@ -84,7 +84,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>AMQP • Clustering • HA</sub>
       <br/>
-      <a href="rabbitmq-mastery-skill/">📚 Docs</a>
+      <a href="devops-skills/rabbitmq-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/react.svg" width="80" height="80" alt="React + TanStack"/>
@@ -93,7 +93,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>Router • Query • Table • Form</sub>
       <br/>
-      <a href="react-tanstack-mastery-skill/">📚 Docs</a>
+      <a href="frontend-skills/react-tanstack-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/rust.svg" width="80" height="80" alt="Rust Mastery"/>
@@ -102,7 +102,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>Axum • SQLX • Memory Safety</sub>
       <br/>
-      <a href="rust-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/rust-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/solidjs.svg" width="80" height="80" alt="SolidJS Mastery"/>
@@ -111,7 +111,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>Fine-Grained Reactivity</sub>
       <br/>
-      <a href="solidjs-solidstart-mastery-skill/">📚 Docs</a>
+      <a href="frontend-skills/solidjs-solidstart-mastery-skill/">📚 Docs</a>
     </td>
   </tr>
 </table>
@@ -120,16 +120,16 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
 ## 🚀 Mulai Cepat
 
 ### Menggunakan Satu Skill
-1. Arahkan Claude ke direktori skill yang relevan (contoh: `ai-ml-mastery-skill/`)
+1. Arahkan Claude ke direktori skill yang relevan (contoh: `backend-skills/ai-ml-mastery-skill/`)
 2. Claude akan mengadopsi persona dan keahlian yang didefinisikan di `SKILL.md`
 3. Referensikan file di folder `references/` untuk pengetahuan mendalam
 
 ### Menggunakan Beberapa Skills
 Muat beberapa skills untuk proyek lintas domain:
 ```
-- golang-mastery-skill (backend API)
-- react-tanstack-mastery-skill (frontend)
-- rabbitmq-mastery-skill (message broker)
+- backend-skills/golang-mastery-skill (backend API)
+- frontend-skills/react-tanstack-mastery-skill (frontend)
+- devops-skills/rabbitmq-mastery-skill (message broker)
 ```
 
 ### Contoh Prompt
@@ -146,7 +146,7 @@ logging, dan konfigurasi deployment Docker."
 
 **Skenario**: Anda membutuhkan model sentiment analysis siap produksi
 
-**Muat Skill**: `ai-ml-mastery-skill`
+**Muat Skill**: `backend-skills/ai-ml-mastery-skill`
 
 **Tanya Claude**:
 ```
@@ -173,9 +173,9 @@ Sertakan:
 **Skenario**: Membangun sistem microservices dengan komunikasi async
 
 **Muat Skills**:
-- `golang-mastery-skill` (backend services)
-- `react-tanstack-mastery-skill` (frontend dashboard)
-- `rabbitmq-mastery-skill` (message broker)
+- `backend-skills/golang-mastery-skill` (backend services)
+- `frontend-skills/react-tanstack-mastery-skill` (frontend dashboard)
+- `devops-skills/rabbitmq-mastery-skill` (message broker)
 
 **Tanya Claude**:
 ```
@@ -199,7 +199,7 @@ Sertakan:
 
 **Skenario**: Review codebase Rust yang ada untuk deployment produksi
 
-**Muat Skill**: `rust-mastery-skill`
+**Muat Skill**: `backend-skills/rust-mastery-skill`
 
 **Tanya Claude**:
 ```
@@ -283,122 +283,19 @@ claude-codex-skills-directory/
 │       ├── rust.svg
 │       └── solidjs.svg
 │
-├── ai-ml-mastery-skill/
-│   ├── SKILL.md                        # Panduan keahlian AI/ML
-│   └── references/                     # 9 dokumen deep-dive
-│       ├── deep-learning.md            # PyTorch, TensorFlow, JAX
-│       ├── transformers-llm.md         # LLMs, fine-tuning, PEFT
-│       ├── computer-vision.md          # Object detection, segmentation
-│       ├── machine-learning.md         # sklearn, XGBoost, ensembles
-│       ├── nlp.md                      # Text processing, embeddings
-│       ├── mlops.md                    # Deployment, monitoring
-│       ├── clean-code.md               # Patterns, anti-patterns
-│       ├── debugging.md                # Profiling, optimization
-│       └── data-engineering.md         # pandas, polars, dask
+├── backend-skills/
+│   ├── ai-ml-mastery-skill/
+│   ├── bunjs-mastery-skill/
+│   ├── golang-mastery-skill/
+│   └── rust-mastery-skill/
 │
-├── bunjs-mastery-skill/
-│   ├── SKILL.md                        # Panduan dalam Bahasa Indonesia
-│   ├── references/                     # 4 referensi
-│   │   ├── clean-code-patterns.md      # Design patterns
-│   │   ├── debugging-guide.md
-│   │   ├── docker-patterns.md          # Advanced Docker
-│   │   └── testing-strategy.md
-│   ├── scripts/                        # 2 script otomasi
-│   │   ├── init-project.sh             # Bootstrap project
-│   │   └── healthcheck.ts              # Template health check
-│   └── assets/                         # Template project
-│       └── project-template/           # Boilerplate lengkap
-│           ├── src/
-│           │   ├── index.ts
-│           │   ├── app.ts
-│           │   ├── config/
-│           │   ├── routes/
-│           │   ├── controllers/
-│           │   ├── services/
-│           │   ├── repositories/
-│           │   ├── middlewares/
-│           │   └── utils/
-│           └── docker/
-│               └── Dockerfile
+├── frontend-skills/
+│   ├── nuxtjs-mastery-skill/
+│   ├── react-tanstack-mastery-skill/
+│   └── solidjs-solidstart-mastery-skill/
 │
-├── golang-mastery-skill/
-│   ├── SKILL.md                        # Panduan dalam Bahasa Indonesia
-│   ├── references/                     # 10 referensi
-│   │   ├── patterns.md                 # Design patterns
-│   │   ├── anti-patterns.md            # Kesalahan umum
-│   │   ├── concurrency.md              # Goroutines, channels
-│   │   ├── docker.md                   # Template Dockerfile
-│   │   ├── libraries.md                # Package teruji
-│   │   ├── coding-standards.md         # Go idioms
-│   │   ├── debugging.md                # Profiling, tracing
-│   │   ├── code-review.md              # Checklist review
-│   │   ├── project-structure.md        # Organisasi folder
-│   │   └── examples.md                 # Contoh kode
-│   └── scripts/
-│       └── init_project.py             # Project scaffolder
-│
-├── nuxtjs-mastery-skill/
-│   ├── SKILL.md                        # Panduan dalam Bahasa Indonesia
-│   └── references/                     # 8 referensi
-│       ├── folder-structure.md         # Layout project
-│       ├── tanstack-query.md           # Pola data fetching
-│       ├── clean-code.md               # Pola Vue
-│       ├── performance.md              # Optimasi
-│       ├── debugging.md                # Vue DevTools
-│       ├── common-pitfalls.md          # Bug reaktivitas
-│       ├── security.md                 # XSS, auth
-│       └── libraries.md                # Ekosistem Vue
-│
-├── rabbitmq-mastery-skill/
-│   ├── MANIFEST.json                   # Metadata skill
-│   ├── SKILL.md
-│   ├── references/                     # 6 referensi
-│   │   ├── patterns.md                 # Pola messaging
-│   │   ├── clustering.md               # Konfigurasi HA
-│   │   ├── monitoring.md               # Setup Prometheus
-│   │   ├── performance.md              # Panduan tuning
-│   │   ├── security.md                 # Security hardening
-│   │   └── troubleshooting.md          # Diagnosis masalah
-│   └── scripts/                        # 3 script Python
-│       ├── package_skill.py
-│       ├── async_publisher.py          # Publisher high-throughput
-│       └── connection_pool.py          # Manajemen koneksi
-│
-├── react-tanstack-mastery-skill/
-│   ├── SKILL.md                        # Panduan dalam Bahasa Indonesia
-│   └── references/                     # 9 referensi
-│       ├── folder-structure.md         # Layout project
-│       ├── tanstack-query.md           # Server state
-│       ├── tanstack-router.md          # Type-safe routing
-│       ├── tanstack-table.md           # Data tables
-│       ├── tanstack-form.md            # Form handling
-│       ├── tanstack-start.md           # Full-stack SSR
-│       ├── recommended-libraries.md    # Pemilihan dependency
-│       ├── common-pitfalls.md          # Bug React
-│       └── debugging-guide.md          # DevTools & profiling
-│
-├── rust-mastery-skill/
-│   ├── SKILL.md                        # Panduan dalam Bahasa Indonesia
-│   ├── references/                     # 6 referensi
-│   │   ├── advanced-patterns.md        # Design patterns
-│   │   ├── senior-habits.md            # Best practices
-│   │   ├── debugging-guide.md          # Profiling, tracing
-│   │   ├── code-review-guide.md        # Checklist review
-│   │   ├── trusted-libraries.md        # Panduan ekosistem
-│   │   └── bug-prevention.md           # Anti-patterns
-│   ├── scripts/
-│   │   └── scaffold_project.py         # Generator project
-│   └── assets/
-│       └── github-ci.yml               # Template CI/CD
-│
-└── solidjs-solidstart-mastery-skill/
-    ├── SKILL.md                        # Panduan dalam Bahasa Indonesia
-    └── references/                     # 5 referensi
-        ├── debugging.md                # DevTools & troubleshooting
-        ├── performance.md              # Optimasi bundle
-        ├── patterns.md                 # Design patterns
-        ├── security.md                 # Auth & security
-        └── testing.md                  # Strategi testing
+└── devops-skills/
+    └── rabbitmq-mastery-skill/
 ```
 
 
@@ -820,11 +717,11 @@ Semua nama produk, logo, dan brand adalah properti pemilik masing-masing. Semua 
 <details>
 <summary><b>Bagaimana cara menggunakan skills ini dengan Claude AI / ChatGPT Codex?</b></summary>
 
-Arahkan Claude AI / ChatGPT Codex ke direktori skill yang relevan (contoh: `ai-ml-mastery-skill/`) atau muat file spesifik. AI akan mengadopsi persona dan expertise yang didefinisikan di `SKILL.md`. Anda juga bisa memuat beberapa skills untuk proyek lintas domain.
+Arahkan Claude AI / ChatGPT Codex ke direktori skill yang relevan (contoh: `backend-skills/ai-ml-mastery-skill/`) atau muat file spesifik. AI akan mengadopsi persona dan expertise yang didefinisikan di `SKILL.md`. Anda juga bisa memuat beberapa skills untuk proyek lintas domain.
 
 Contoh:
 ```
-"Muat skill AI/ML mastery dan bantu saya mendesain arsitektur neural network"
+"Muat skill backend-skills/ai-ml-mastery-skill dan bantu saya mendesain arsitektur neural network"
 ```
 
 </details>
@@ -833,8 +730,8 @@ Contoh:
 <summary><b>Apakah bisa menggunakan beberapa skills sekaligus?</b></summary>
 
 Ya! Muat beberapa skills untuk proyek kompleks. Contohnya:
-- `golang-mastery-skill` + `rabbitmq-mastery-skill` untuk backend microservices
-- `react-tanstack-mastery-skill` + frontend skills untuk full-stack apps
+- `backend-skills/golang-mastery-skill` + `devops-skills/rabbitmq-mastery-skill` untuk backend microservices
+- `frontend-skills/react-tanstack-mastery-skill` + frontend skills untuk full-stack apps
 - Kombinasi apapun yang sesuai kebutuhan proyek Anda
 
 </details>
