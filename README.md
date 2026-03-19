@@ -46,7 +46,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>PyTorch • TensorFlow • LLMs</sub>
       <br/>
-      <a href="ai-ml-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/ai-ml-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/bun.svg" width="80" height="80" alt="Bun.js Mastery"/>
@@ -55,7 +55,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>TypeScript • Hono • Drizzle</sub>
       <br/>
-      <a href="bunjs-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/bunjs-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/golang.svg" width="80" height="80" alt="Golang Mastery"/>
@@ -64,7 +64,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>Chi • SQLX • Concurrency</sub>
       <br/>
-      <a href="golang-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/golang-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/nuxt.svg" width="80" height="80" alt="Nuxt.js Mastery"/>
@@ -73,7 +73,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>Vue 3 • Nuxt 3 • Query</sub>
       <br/>
-      <a href="nuxtjs-mastery-skill/">📚 Docs</a>
+      <a href="frontend-skills/nuxtjs-mastery-skill/">📚 Docs</a>
     </td>
   </tr>
   <tr>
@@ -84,7 +84,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>AMQP • Clustering • HA</sub>
       <br/>
-      <a href="rabbitmq-mastery-skill/">📚 Docs</a>
+      <a href="devops-skills/rabbitmq-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/react.svg" width="80" height="80" alt="React + TanStack"/>
@@ -93,7 +93,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>Router • Query • Table • Form</sub>
       <br/>
-      <a href="react-tanstack-mastery-skill/">📚 Docs</a>
+      <a href="frontend-skills/react-tanstack-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/rust.svg" width="80" height="80" alt="Rust Mastery"/>
@@ -102,7 +102,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>Axum • SQLX • Memory Safety</sub>
       <br/>
-      <a href="rust-mastery-skill/">📚 Docs</a>
+      <a href="backend-skills/rust-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/solidjs.svg" width="80" height="80" alt="SolidJS Mastery"/>
@@ -111,7 +111,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>Fine-Grained Reactivity</sub>
       <br/>
-      <a href="solidjs-solidstart-mastery-skill/">📚 Docs</a>
+      <a href="frontend-skills/solidjs-solidstart-mastery-skill/">📚 Docs</a>
     </td>
   </tr>
 </table>
@@ -120,16 +120,16 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
 ## 🚀 Quick Start
 
 ### Using a Single Skill
-1. Point Claude to the relevant skill directory (e.g., `ai-ml-mastery-skill/`)
+1. Point Claude to the relevant skill directory (e.g., `backend-skills/ai-ml-mastery-skill/`)
 2. Claude will adopt the persona and expertise defined in `SKILL.md`
 3. Reference files in `references/` for deep-dive knowledge
 
 ### Using Multiple Skills
 Load multiple skills for cross-domain projects:
 ```
-- golang-mastery-skill (backend API)
-- react-tanstack-mastery-skill (frontend)
-- rabbitmq-mastery-skill (message broker)
+- backend-skills/golang-mastery-skill (backend API)
+- frontend-skills/react-tanstack-mastery-skill (frontend)
+- devops-skills/rabbitmq-mastery-skill (message broker)
 ```
 
 ### Example Prompt
@@ -146,7 +146,7 @@ logging, and Docker deployment."
 
 **Scenario**: You need a production-ready sentiment analysis model
 
-**Load Skill**: `ai-ml-mastery-skill`
+**Load Skill**: `backend-skills/ai-ml-mastery-skill`
 
 **Ask Claude**:
 ```
@@ -173,9 +173,9 @@ Include:
 **Scenario**: Build a microservices system with async communication
 
 **Load Skills**:
-- `golang-mastery-skill` (backend services)
-- `react-tanstack-mastery-skill` (frontend dashboard)
-- `rabbitmq-mastery-skill` (message broker)
+- `backend-skills/golang-mastery-skill` (backend services)
+- `frontend-skills/react-tanstack-mastery-skill` (frontend dashboard)
+- `devops-skills/rabbitmq-mastery-skill` (message broker)
 
 **Ask Claude**:
 ```
@@ -199,7 +199,7 @@ Include:
 
 **Scenario**: Review existing Rust codebase for production deployment
 
-**Load Skill**: `rust-mastery-skill`
+**Load Skill**: `backend-skills/rust-mastery-skill`
 
 **Ask Claude**:
 ```
@@ -271,6 +271,7 @@ All skills follow these core principles:
 ```
 claude-codex-skills-directory/
 ├── README.md                           # This file
+├── README_ID.md                        # Indonesian documentation
 ├── assets/
 │   └── logos/                          # Technology logos
 │       ├── python.svg
@@ -282,122 +283,19 @@ claude-codex-skills-directory/
 │       ├── rust.svg
 │       └── solidjs.svg
 │
-├── ai-ml-mastery-skill/
-│   ├── SKILL.md                        # AI/ML expertise guide
-│   └── references/                     # 9 deep-dive docs
-│       ├── deep-learning.md            # PyTorch, TensorFlow, JAX
-│       ├── transformers-llm.md         # LLMs, fine-tuning, PEFT
-│       ├── computer-vision.md          # Object detection, segmentation
-│       ├── machine-learning.md         # sklearn, XGBoost, ensembles
-│       ├── nlp.md                      # Text processing, embeddings
-│       ├── mlops.md                    # Deployment, monitoring
-│       ├── clean-code.md               # Patterns, anti-patterns
-│       ├── debugging.md                # Profiling, optimization
-│       └── data-engineering.md         # pandas, polars, dask
+├── backend-skills/
+│   ├── ai-ml-mastery-skill/
+│   ├── bunjs-mastery-skill/
+│   ├── golang-mastery-skill/
+│   └── rust-mastery-skill/
 │
-├── bunjs-mastery-skill/
-│   ├── SKILL.md
-│   ├── references/                     # 4 references
-│   │   ├── clean-code-patterns.md      # Design patterns
-│   │   ├── debugging-guide.md
-│   │   ├── docker-patterns.md          # Advanced Docker
-│   │   └── testing-strategy.md
-│   ├── scripts/                        # 2 automation scripts
-│   │   ├── init-project.sh             # Project bootstrap
-│   │   └── healthcheck.ts              # Health check template
-│   └── assets/                         # Project templates
-│       └── project-template/           # Full boilerplate
-│           ├── src/
-│           │   ├── index.ts
-│           │   ├── app.ts
-│           │   ├── config/
-│           │   ├── routes/
-│           │   ├── controllers/
-│           │   ├── services/
-│           │   ├── repositories/
-│           │   ├── middlewares/
-│           │   └── utils/
-│           └── docker/
-│               └── Dockerfile
+├── frontend-skills/
+│   ├── nuxtjs-mastery-skill/
+│   ├── react-tanstack-mastery-skill/
+│   └── solidjs-solidstart-mastery-skill/
 │
-├── golang-mastery-skill/
-│   ├── SKILL.md
-│   ├── references/                     # 10 references
-│   │   ├── patterns.md                 # Design patterns
-│   │   ├── anti-patterns.md            # Common mistakes
-│   │   ├── concurrency.md              # Goroutines, channels
-│   │   ├── docker.md                   # Dockerfile templates
-│   │   ├── libraries.md                # Battle-tested packages
-│   │   ├── coding-standards.md         # Go idioms
-│   │   ├── debugging.md                # Profiling, tracing
-│   │   ├── code-review.md              # Review checklist
-│   │   ├── project-structure.md        # Folder organization
-│   │   └── examples.md                 # Code examples
-│   └── scripts/
-│       └── init_project.py             # Project scaffolder
-│
-├── nuxtjs-mastery-skill/
-│   ├── SKILL.md
-│   └── references/                     # 8 references
-│       ├── folder-structure.md         # Project layout
-│       ├── tanstack-query.md           # Data fetching patterns
-│       ├── clean-code.md               # Vue patterns
-│       ├── performance.md              # Optimization
-│       ├── debugging.md                # Vue DevTools
-│       ├── common-pitfalls.md          # Reactivity bugs
-│       ├── security.md                 # XSS, auth
-│       └── libraries.md                # Vue ecosystem
-│
-├── rabbitmq-mastery-skill/
-│   ├── MANIFEST.json                   # Skill metadata
-│   ├── SKILL.md
-│   ├── references/                     # 6 references
-│   │   ├── patterns.md                 # Messaging patterns
-│   │   ├── clustering.md               # HA configuration
-│   │   ├── monitoring.md               # Prometheus setup
-│   │   ├── performance.md              # Tuning guide
-│   │   ├── security.md                 # Security hardening
-│   │   └── troubleshooting.md          # Problem diagnosis
-│   └── scripts/                        # 3 Python scripts
-│       ├── package_skill.py
-│       ├── async_publisher.py          # High-throughput publisher
-│       └── connection_pool.py          # Connection management
-│
-├── react-tanstack-mastery-skill/
-│   ├── SKILL.md
-│   └── references/                     # 9 references
-│       ├── folder-structure.md         # Project layout
-│       ├── tanstack-query.md           # Server state
-│       ├── tanstack-router.md          # Type-safe routing
-│       ├── tanstack-table.md           # Data tables
-│       ├── tanstack-form.md            # Form handling
-│       ├── tanstack-start.md           # Full-stack SSR
-│       ├── recommended-libraries.md    # Dependency selection
-│       ├── common-pitfalls.md          # React bugs
-│       └── debugging-guide.md          # DevTools & profiling
-│
-├── rust-mastery-skill/
-│   ├── SKILL.md
-│   ├── references/                     # 6 references
-│   │   ├── advanced-patterns.md        # Design patterns
-│   │   ├── senior-habits.md            # Best practices
-│   │   ├── debugging-guide.md          # Profiling, tracing
-│   │   ├── code-review-guide.md        # Review checklist
-│   │   ├── trusted-libraries.md        # Ecosystem guide
-│   │   └── bug-prevention.md           # Anti-patterns
-│   ├── scripts/
-│   │   └── scaffold_project.py         # Project generator
-│   └── assets/
-│       └── github-ci.yml               # CI/CD template
-│
-└── solidjs-solidstart-mastery-skill/
-    ├── SKILL.md
-    └── references/                     # 5 references
-        ├── debugging.md                # DevTools & troubleshooting
-        ├── performance.md              # Bundle optimization
-        ├── patterns.md                 # Design patterns
-        ├── security.md                 # Auth & security
-        └── testing.md                  # Testing strategies
+└── devops-skills/
+    └── rabbitmq-mastery-skill/
 ```
 
 
@@ -819,11 +717,11 @@ All product names, logos, and brands are property of their respective owners. Al
 <details>
 <summary><b>How do I use these skills with Claude AI / ChatGPT Codex?</b></summary>
 
-Point Claude AI / ChatGPT Codex to the relevant skill directory (e.g., `ai-ml-mastery-skill/`) or load specific files. The AI will adopt the persona and expertise defined in `SKILL.md`. You can also load multiple skills for cross-domain projects.
+Point Claude AI / ChatGPT Codex to the relevant skill directory (e.g., `backend-skills/ai-ml-mastery-skill/`) or load specific files. The AI will adopt the persona and expertise defined in `SKILL.md`. You can also load multiple skills for cross-domain projects.
 
 Example:
 ```
-"Load the AI/ML mastery skill and help me design a neural network architecture"
+"Load the backend-skills/ai-ml-mastery-skill and help me design a neural network architecture"
 ```
 
 </details>
@@ -832,8 +730,8 @@ Example:
 <summary><b>Can I use multiple skills at once?</b></summary>
 
 Yes! Load multiple skills for complex projects. For example:
-- `golang-mastery-skill` + `rabbitmq-mastery-skill` for backend microservices
-- `react-tanstack-mastery-skill` + frontend skills for full-stack apps
+- `backend-skills/golang-mastery-skill` + `devops-skills/rabbitmq-mastery-skill` for backend microservices
+- `frontend-skills/react-tanstack-mastery-skill` + frontend skills for full-stack apps
 - Any combination that fits your project needs
 
 </details>
@@ -958,7 +856,7 @@ See [LICENSE](LICENSE) file for full license text.
 
 Made with ❤️ by Axel Modra
 
-🌏 **Languages**: **English** (this page) | [Bahasa Indonesia](README.id.md)
+🌏 **Languages**: **English** (this page) | [Bahasa Indonesia](README_ID.md)
 
 [⬆ Back to Top](#-claude-codex-skills-directory)
 
