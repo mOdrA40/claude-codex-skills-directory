@@ -39,6 +39,7 @@ description: |
 
 - Distributed SQL patterns: [references/distributed-sql-patterns.md](references/distributed-sql-patterns.md)
 - Transactions and multi-region operations: [references/transactions-and-multi-region.md](references/transactions-and-multi-region.md)
+- Retry semantics and idempotency: [references/retry-semantics-and-idempotency.md](references/retry-semantics-and-idempotency.md)
 - Contention and hotspots: [references/contention-and-hotspots.md](references/contention-and-hotspots.md)
 - Schema changes and backfills: [references/schema-changes-and-backfills.md](references/schema-changes-and-backfills.md)
 - Locality and zone configs: [references/locality-and-zone-configs.md](references/locality-and-zone-configs.md)

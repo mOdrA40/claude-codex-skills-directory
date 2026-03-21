@@ -26,6 +26,7 @@ description: |
 - Caching and data models: [references/caching-and-data-models.md](references/caching-and-data-models.md)
 - Reliability and operations: [references/reliability-and-operations.md](references/reliability-and-operations.md)
 - Cache invalidation: [references/cache-invalidation.md](references/cache-invalidation.md)
+- Cache degraded modes and fallbacks: [references/cache-degraded-modes-and-fallbacks.md](references/cache-degraded-modes-and-fallbacks.md)
 - Key design: [references/key-design.md](references/key-design.md)
 - Persistence and recovery: [references/persistence-and-recovery.md](references/persistence-and-recovery.md)
 - Memory management: [references/memory-management.md](references/memory-management.md)
