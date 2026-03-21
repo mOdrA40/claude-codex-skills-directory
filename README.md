@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 47 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 49 specialized domains
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-47-brightgreen.svg)](#-skills-overview)
+[![License: MIT](https://img.shields.io/badge/License/MIT-blue.svg)](LICENSE)
+[![Skills Count](https://img.shields.io/badge/Skills-49-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,14 +20,14 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 47 specia
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 47 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 49 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 47 specialized domains |
+| **Total Skills** | 49 specialized domains |
 | **Reference Docs** | 400+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
 | **Technologies Covered** | 110+ frameworks and libraries |
@@ -115,6 +115,26 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 47 master
     </td>
   </tr>
 </table>
+
+## 🧠 Backend Skills
+
+- **[AI/ML Mastery](backend-skills/ai-ml-mastery-skill/)**
+  Production ML systems, LLM-enabled backends, model serving, evaluation discipline, and MLOps guardrails.
+
+- **[Bun.js + Docker](backend-skills/bunjs-mastery-skill/)**
+  TypeScript APIs, Hono, Docker delivery, operational hardening, and runtime-aware backend design.
+
+- **[Golang](backend-skills/golang-mastery-skill/)**
+  Idiomatic services, concurrency ownership, error handling, performance, and production-grade APIs.
+
+- **[Rust](backend-skills/rust-mastery-skill/)**
+  Memory-safe services, Axum/SQLX patterns, async correctness, and systems-level production rigor.
+
+- **[Zig](backend-skills/zig-mastery-skill/)**
+  Explicit memory management, systems-aware backend design, low-level control, and predictable performance.
+
+- **[Erlang / Elixir](backend-skills/erlang-elixir-mastery-skill/)**
+  OTP supervision, actor-model concurrency, BEAM reliability, distributed systems, and operable services.
 
 ## 🗃️ Data Skills
 
@@ -413,8 +433,10 @@ claude-codex-skills-directory/
 ├── backend-skills/
 │   ├── ai-ml-mastery-skill/
 │   ├── bunjs-mastery-skill/
+│   ├── erlang-elixir-mastery-skill/
 │   ├── golang-mastery-skill/
-│   └── rust-mastery-skill/
+│   ├── rust-mastery-skill/
+│   └── zig-mastery-skill/
 │
 ├── data-skills/
 │   ├── airflow-mastery-skill/
