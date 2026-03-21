@@ -52,6 +52,12 @@ Type Safety > Any
 | [tanstack-form.md](references/tanstack-form.md) | Form validation, field arrays, async validation |
 | [tanstack-start.md](references/tanstack-start.md) | Full-stack SSR framework |
 
+## Advanced Frontend References
+
+- [architecture-decision-framework.md](references/architecture-decision-framework.md) — App boundary choices, complexity management, and team-scaled structure
+- [rendering-performance-playbook.md](references/rendering-performance-playbook.md) — Render bottlenecks, query waterfalls, and performance investigation order
+- [error-handling-and-resilience.md](references/error-handling-and-resilience.md) — Recoverable UI states, error boundaries, retries, and degraded UX
+
 ## Code Quality Standards
 
 ### Naming Conventions

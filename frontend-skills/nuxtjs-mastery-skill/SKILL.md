@@ -51,6 +51,9 @@ Baca reference yang relevan berdasarkan kebutuhan:
 - **[references/libraries.md](references/libraries.md)** — Curated list library terpercaya dengan use cases
 - **[references/state-management.md](references/state-management.md)** — Pinia patterns, when to use what
 - **[references/code-examples.md](references/code-examples.md)** — Real-world code examples dan patterns
+- **[references/ssr-hydration-and-data-flow.md](references/ssr-hydration-and-data-flow.md)** — SSR/client execution boundaries, hydration correctness, and duplicated fetch prevention
+- **[references/route-rules-and-rendering-strategy.md](references/route-rules-and-rendering-strategy.md)** — SSR/SSG/cache/render-mode decision guidance per route class
+- **[references/frontend-incident-playbook.md](references/frontend-incident-playbook.md)** — Hydration, routing, cache, and deployment incident triage
 
 ## Golden Rules (Cetak dalam otak)
 

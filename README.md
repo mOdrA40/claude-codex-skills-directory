@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 50 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 54 specialized domains
 
 [![License: MIT](https://img.shields.io/badge/License/MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-50-brightgreen.svg)](#-skills-overview)
+[![Skills Count](https://img.shields.io/badge/Skills-54-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,14 +20,14 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 50 specia
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 50 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 54 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 50 specialized domains |
+| **Total Skills** | 54 specialized domains |
 | **Reference Docs** | 400+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
 | **Technologies Covered** | 110+ frameworks and libraries |
@@ -138,6 +138,29 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 50 master
 
 - **[Erlang / Elixir](backend-skills/erlang-elixir-mastery-skill/)**
   OTP supervision, actor-model concurrency, BEAM reliability, distributed systems, and operable services.
+
+## 🎨 Frontend & Mobile Skills
+
+- **[React + TanStack](frontend-skills/react-tanstack-mastery-skill/)**
+  React architecture, TanStack Query/Router/Table/Form, rendering performance, resilience, and maintainable frontend boundaries.
+
+- **[Nuxt.js + TanStack](frontend-skills/nuxtjs-mastery-skill/)**
+  Nuxt 3 architecture, TanStack Query integration, SSR/hydration discipline, rendering strategy, and production debugging.
+
+- **[SolidJS + SolidStart](frontend-skills/solidjs-solidstart-mastery-skill/)**
+  Fine-grained reactivity, SSR/streaming, resilient UI state modeling, and production-grade Solid architecture.
+
+- **[React Native + Expo](frontend-skills/react-native-expo-mastery-skill/)**
+  Mobile architecture, navigation, offline behavior, device capability boundaries, OTA discipline, and production incident handling.
+
+- **[Flutter](frontend-skills/flutter-mastery-skill/)**
+  Cross-platform app architecture, state boundaries, performance, offline sync, native integration, and release operations.
+
+- **[Swift iOS](frontend-skills/swift-ios-mastery-skill/)**
+  SwiftUI/UIKit boundaries, iOS state ownership, offline sync, instrumentation, and App Store release readiness.
+
+- **[Kotlin / KMP / Jetpack Compose](frontend-skills/kotlin-kmp-jetpack-compose-mastery-skill/)**
+  Shared-module strategy, Compose UI state, navigation, offline sync, rendering discipline, and release compatibility.
 
 ## 🗃️ Data Skills
 
@@ -463,9 +486,13 @@ claude-codex-skills-directory/
 │   └── spark-mastery-skill/
 
 ├── frontend-skills/
+│   ├── flutter-mastery-skill/
+│   ├── kotlin-kmp-jetpack-compose-mastery-skill/
 │   ├── nuxtjs-mastery-skill/
+│   ├── react-native-expo-mastery-skill/
 │   ├── react-tanstack-mastery-skill/
-│   └── solidjs-solidstart-mastery-skill/
+│   ├── solidjs-solidstart-mastery-skill/
+│   └── swift-ios-mastery-skill/
 │
 └── devops-skills/
     ├── ansible-mastery-skill/

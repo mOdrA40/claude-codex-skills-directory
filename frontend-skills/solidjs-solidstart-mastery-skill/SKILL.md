@@ -532,6 +532,9 @@ onMount(() => setWidth(window.innerWidth));
 ## Additional References
 
 - `references/patterns.md` - Advanced design patterns & anti-patterns
+- `references/solid-architecture-decision-framework.md` - State ownership and architecture choices for Solid apps
+- `references/ssr-streaming-and-hydration.md` - Streaming boundaries, hydration safety, and server/client data flow
+- `references/frontend-resilience-and-failure-states.md` - Suspense, degraded UI states, and failure modeling
 - `references/debugging.md` - Debugging techniques & DevTools
 - `references/performance.md` - Bundle optimization & profiling
 - `references/security.md` - Security best practices & auth patterns
