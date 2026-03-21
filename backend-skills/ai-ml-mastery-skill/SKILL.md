@@ -1,230 +1,168 @@
 ---
-name: ai-ml-senior-engineer
+name: ai-ml-principal-engineer
 description: |
-  Elite AI/ML Senior Engineer with 20+ years experience. Transforms Claude into a world-class AI researcher and engineer capable of building production-grade ML systems, LLMs, transformers, and computer vision solutions. Use when: (1) Building ML/DL models from scratch or fine-tuning, (2) Designing neural network architectures, (3) Implementing LLMs, transformers, attention mechanisms, (4) Computer vision tasks (object detection, segmentation, GANs), (5) NLP tasks (NER, sentiment, embeddings), (6) MLOps and production deployment, (7) Data preprocessing and feature engineering, (8) Model optimization and debugging, (9) Clean code review for ML projects, (10) Choosing optimal libraries and frameworks. Triggers: "ML", "AI", "deep learning", "neural network", "transformer", "LLM", "computer vision", "NLP", "TensorFlow", "PyTorch", "sklearn", "train model", "fine-tune", "embedding", "CNN", "RNN", "LSTM", "attention", "GPT", "BERT", "diffusion", "GAN", "object detection", "segmentation".
+  Principal/Senior-level AI/ML playbook for production machine learning systems, LLM-enabled backends, model serving, training pipelines, evaluation discipline, reliability, security, and MLOps.
+  Use when: designing ML services, building or reviewing training/inference code, selecting model architectures, fine-tuning transformers, hardening model APIs, debugging performance or correctness issues, or preparing ML systems for production.
 ---
 
-# AI/ML Senior Engineer Skill
+# AI/ML Mastery (Senior → Principal)
 
-Persona: Elite AI/ML Engineer with 20+ years experience at top research labs (DeepMind, OpenAI, Anthropic level). Published researcher with expertise in building production LLMs and state-of-the-art ML systems.
+## Operate
 
-## Core Philosophy
+- Start by confirming: objective, success metric, data availability, privacy/security constraints, latency and throughput targets, compute budget, deployment target, and the definition of done.
+- Separate the problem into boundaries: data ingestion, feature/preprocessing, training, evaluation, registry/artifacts, inference API, and operations.
+- Prefer the smallest system that can prove value: a simple baseline model with strong evaluation beats a complex stack with weak discipline.
+- Treat ML work as software engineering: reproducibility, observability, rollback, and failure handling are part of the feature.
 
+> The goal is not just a high offline metric. The goal is a model-backed backend that is correct, measurable, operable, and safe in production.
+
+## Default Standards
+
+- Keep notebooks for exploration only; production logic belongs in versioned Python modules and tests.
+- Validate schema, dtypes, ranges, nullability, and label quality at the data boundary.
+- Make training and inference preprocessing identical by sharing explicit pipeline code.
+- Prefer typed config objects and immutable runtime settings.
+- Use structured logging and explicit error taxonomy for data, model, dependency, and serving failures.
+- Define latency budgets, timeout behavior, fallback behavior, and model version strategy before exposing public inference endpoints.
+- Default to simpler baselines before large models; earn complexity with measured gains.
+
+## “Bad vs Good” (common production pitfalls)
+
+```python
+# ❌ BAD: training and inference use different preprocessing.
+train_text = text.lower().strip()
+serve_text = text.strip()
+
+# ✅ GOOD: one shared preprocessing pipeline used everywhere.
+normalized_text = text_normalizer.normalize(text)
 ```
-KISS > Complexity       | Simple solutions that work > clever solutions that break
-Readability > Brevity   | Code is read 10x more than written
-Explicit > Implicit     | No magic, no hidden behavior
-Tested > Assumed        | If it's not tested, it's broken
-Reproducible > Fast     | Random seeds, deterministic ops, version pinning
+
+```python
+# ❌ BAD: silent fallback hides model loading failures.
+try:
+    model = load_model(path)
+except Exception:
+    model = None
+
+# ✅ GOOD: fail explicitly or switch to a known degraded mode.
+try:
+    model = load_model(path)
+except FileNotFoundError as error:
+    raise ModelBootstrapError(f"model artifact missing: {path}") from error
 ```
+
+```python
+# ❌ BAD: unbounded inference call with no deadline.
+prediction = client.predict(payload)
+
+# ✅ GOOD: explicit deadline and graceful failure mapping.
+prediction = client.predict(payload, timeout=2.0)
+```
+
+## Workflow (Feature / Refactor / Bug)
+
+1. Define the business outcome, online/offline metrics, and failure tolerance.
+2. Establish a reproducible baseline and dataset contract.
+3. Design boundaries between training code, model packaging, and serving code.
+4. Implement the smallest end-to-end slice with tests and evaluation reports.
+5. Validate reproducibility, security, performance, and rollback readiness.
+6. Ship with monitoring for latency, throughput, drift, quality, and cost.
+
+## Validation Commands
+
+- Run `python -m pytest`.
+- Run `python -m ruff check .` if Ruff is used.
+- Run `python -m mypy src` for typed code paths when the repo uses MyPy.
+- Run `python -m pytest -k inference` for serving-critical tests.
+- Run `python -m pytest --maxfail=1 --disable-warnings` during local debugging.
+- Run smoke evaluation for the current model artifact before release.
+- Run container build validation if inference is deployed via Docker.
+
+## Backend-Oriented ML Guardrails
+
+- Always version models, prompts, tokenizer assets, and preprocessing artifacts together.
+- Do not call external model providers from request paths without timeouts, retries, budgets, and fallback behavior.
+- Separate online inference from heavy offline batch jobs.
+- Prefer async queue-based processing for expensive enrichment, reranking, or embedding backfills.
+- Protect inference endpoints with payload size limits, authn/authz, and rate limiting.
+- Log request IDs, model version, feature version, and decision metadata without leaking raw sensitive payloads.
 
 ## Decision Framework: Library Selection
 
-| Task | Primary Choice | When to Use Alternative |
-|------|---------------|------------------------|
-| **Deep Learning** | PyTorch | TensorFlow for production TPU, JAX for research |
-| **Tabular ML** | scikit-learn | XGBoost/LightGBM for large data, CatBoost for categoricals |
-| **Computer Vision** | torchvision + timm | detectron2 for detection, ultralytics for YOLO |
-| **NLP/LLM** | transformers (HuggingFace) | vLLM for serving, llama.cpp for edge |
-| **Data Processing** | pandas | polars for >10GB, dask for distributed |
-| **Experiment Tracking** | MLflow | W&B for teams, Neptune for enterprise |
-| **Hyperparameter Tuning** | Optuna | Ray Tune for distributed |
+| Task | Default Choice | Use Alternative When |
+|------|----------------|----------------------|
+| Deep learning training | PyTorch | TensorFlow for TPU-heavy production, JAX for research-heavy experimentation |
+| Classical/tabular ML | scikit-learn | XGBoost/LightGBM for stronger tabular baselines, CatBoost for categorical-heavy data |
+| LLM application layer | transformers + sentence-transformers | vLLM for high-throughput serving, llama.cpp for edge or constrained environments |
+| Data processing | pandas | polars for larger columnar workloads, dask/spark for distributed pipelines |
+| Experiment tracking | MLflow | Weights & Biases or Neptune when team workflows require hosted collaboration |
+| Hyperparameter tuning | Optuna | Ray Tune when you need distributed search orchestration |
 
-## Quick Reference: Architecture Selection
+## Architecture Selection Heuristics
 
-```
-Classification (images)     → ResNet/EfficientNet (simple), ViT (SOTA)
-Object Detection           → YOLOv8 (speed), DETR (accuracy), RT-DETR (balanced)
-Segmentation              → U-Net (medical), Mask2Former (general), SAM (zero-shot)
-Text Classification       → DistilBERT (fast), RoBERTa (accuracy)
-Text Generation           → Llama/Mistral (open), GPT-4 (quality)
-Embeddings               → sentence-transformers, text-embedding-3-large
-Time Series              → TSMixer, PatchTST, temporal fusion transformer
-Tabular                  → XGBoost (general), TabNet (interpretable), FT-Transformer
-Anomaly Detection        → IsolationForest (simple), AutoEncoder (deep)
-Recommendation           → Two-tower, NCF, LightFM (cold start)
+```text
+Text classification          -> DistilBERT for speed, RoBERTa for stronger accuracy
+Embeddings / retrieval       -> sentence-transformers or hosted embedding APIs with evaluation gates
+Vision classification        -> ResNet/EfficientNet as baseline, ViT when data and budget justify it
+Object detection             -> YOLO for speed, DETR/RT-DETR when workflow favors transformer-based designs
+Tabular prediction           -> Logistic regression / XGBoost baseline first, deep tabular only if proven necessary
+Recommendation               -> retrieval + ranking pipelines, not a single monolithic model by default
+Time series                  -> statistical baseline first, then TFT/PatchTST when complexity is justified
 ```
 
-## Project Structure (Mandatory)
+## Recommended Project Structure
 
-```
+```text
 project/
-├── pyproject.toml          # Dependencies, build config (NO setup.py)
-├── .env.example            # Environment template
-├── .gitignore
-├── Makefile               # Common commands
+├── pyproject.toml
 ├── README.md
 ├── src/
-│   └── {project_name}/
-│       ├── __init__.py
-│       ├── config/        # Pydantic settings, YAML configs
-│       ├── data/          # Data loading, preprocessing, augmentation
-│       ├── models/        # Model architectures
-│       ├── training/      # Training loops, callbacks, schedulers
-│       ├── inference/     # Prediction pipelines
-│       ├── evaluation/    # Metrics, validation
-│       └── utils/         # Shared utilities
-├── scripts/               # CLI entry points
-├── tests/                 # pytest tests (mirror src structure)
-├── notebooks/             # Exploration only (NOT production code)
-├── configs/               # Experiment configs (YAML/JSON)
-├── data/
-│   ├── raw/              # Immutable original data
-│   ├── processed/        # Cleaned data
-│   └── features/         # Feature stores
-├── models/               # Saved model artifacts
-├── outputs/              # Experiment outputs
+│   └── app/
+│       ├── config/
+│       ├── data/
+│       ├── features/
+│       ├── models/
+│       ├── training/
+│       ├── evaluation/
+│       ├── inference/
+│       ├── serving/
+│       └── observability/
+├── tests/
+├── scripts/
+├── configs/
+├── notebooks/
 └── docker/
-    ├── Dockerfile
-    └── docker-compose.yml
 ```
 
-## Reference Files
+## Reliability, Security, and Operations
 
-Load these based on task requirements:
+- Make model bootstrap behavior explicit: fail closed, fail open, or degraded mode.
+- Bound input sizes, token counts, image dimensions, and recursion depth for untrusted requests.
+- Prefer queue-based retries over client-side blind retries for expensive inference.
+- Track feature drift, data freshness, and serving skew between training and production.
+- Keep PII out of prompts, logs, traces, and experiment artifacts unless explicitly required and governed.
+- Store secrets and provider credentials in secret managers, never in notebooks or source files.
 
-| Reference | When to Load |
-|-----------|--------------|
-| [references/deep-learning.md](references/deep-learning.md) | PyTorch, TensorFlow, JAX, neural networks, training loops |
-| [references/transformers-llm.md](references/transformers-llm.md) | Attention, transformers, LLMs, fine-tuning, PEFT |
-| [references/computer-vision.md](references/computer-vision.md) | CNN, detection, segmentation, augmentation, GANs |
-| [references/machine-learning.md](references/machine-learning.md) | sklearn, XGBoost, feature engineering, ensembles |
-| [references/nlp.md](references/nlp.md) | Text processing, embeddings, NER, classification |
-| [references/mlops.md](references/mlops.md) | MLflow, Docker, deployment, monitoring |
-| [references/clean-code.md](references/clean-code.md) | Patterns, anti-patterns, code review checklist |
-| [references/debugging.md](references/debugging.md) | Profiling, memory, common bugs, optimization |
-| [references/data-engineering.md](references/data-engineering.md) | pandas, polars, dask, preprocessing |
+## Training and Evaluation Checklist
 
-## Code Standards (Non-Negotiable)
+- [ ] Define offline and online success metrics before training
+- [ ] Fix random seeds when reproducibility matters
+- [ ] Check train/validation/test leakage
+- [ ] Validate preprocessing parity between train and serve
+- [ ] Save model artifact, config, tokenizer, and feature metadata together
+- [ ] Record dataset version and experiment version
+- [ ] Benchmark latency, throughput, memory, and cost
+- [ ] Define rollback or model disable strategy before release
 
-### Type Hints: Always
-```python
-def train_model(
-    model: nn.Module,
-    train_loader: DataLoader,
-    optimizer: torch.optim.Optimizer,
-    epochs: int = 10,
-    device: str = "cuda",
-) -> dict[str, list[float]]:
-    ...
-```
+## References
 
-### Configuration: Pydantic
-```python
-from pydantic import BaseModel, Field
-
-class TrainingConfig(BaseModel):
-    learning_rate: float = Field(1e-4, ge=1e-6, le=1.0)
-    batch_size: int = Field(32, ge=1)
-    epochs: int = Field(10, ge=1)
-    seed: int = 42
-    
-    model_config = {"frozen": True}  # Immutable
-```
-
-### Logging: Structured
-```python
-import structlog
-logger = structlog.get_logger()
-
-# NOT: print(f"Loss: {loss}")
-# YES:
-logger.info("training_step", epoch=epoch, loss=loss, lr=optimizer.param_groups[0]["lr"])
-```
-
-### Error Handling: Explicit
-```python
-# NOT: except Exception
-# YES:
-except torch.cuda.OutOfMemoryError:
-    logger.error("oom_error", batch_size=batch_size)
-    raise
-except FileNotFoundError as e:
-    logger.error("data_not_found", path=str(e.filename))
-    raise DataError(f"Training data not found: {e.filename}") from e
-```
-
-## Training Loop Template
-
-```python
-def train_epoch(
-    model: nn.Module,
-    loader: DataLoader,
-    optimizer: torch.optim.Optimizer,
-    criterion: nn.Module,
-    device: torch.device,
-    scaler: GradScaler | None = None,
-) -> float:
-    model.train()
-    total_loss = 0.0
-    
-    for batch in tqdm(loader, desc="Training"):
-        optimizer.zero_grad(set_to_none=True)  # More efficient
-        
-        inputs = batch["input"].to(device, non_blocking=True)
-        targets = batch["target"].to(device, non_blocking=True)
-        
-        with autocast(device_type="cuda", enabled=scaler is not None):
-            outputs = model(inputs)
-            loss = criterion(outputs, targets)
-        
-        if scaler:
-            scaler.scale(loss).backward()
-            scaler.unscale_(optimizer)
-            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-            scaler.step(optimizer)
-            scaler.update()
-        else:
-            loss.backward()
-            torch.nn.utils.clip_grad_norm_(model.parameters(), max_norm=1.0)
-            optimizer.step()
-        
-        total_loss += loss.item()
-    
-    return total_loss / len(loader)
-```
-
-## Critical Checklist Before Training
-
-- [ ] Set random seeds (`torch.manual_seed`, `np.random.seed`, `random.seed`)
-- [ ] Enable deterministic ops if reproducibility critical
-- [ ] Verify data shapes with single batch
-- [ ] Check for data leakage between train/val/test
-- [ ] Validate preprocessing is identical for train and inference
-- [ ] Set `model.eval()` and `torch.no_grad()` for validation
-- [ ] Monitor GPU memory (`nvidia-smi`, `torch.cuda.memory_summary()`)
-- [ ] Save checkpoints with optimizer state
-- [ ] Log hyperparameters with experiment tracker
-
-## Anti-Patterns to Avoid
-
-| Anti-Pattern | Correct Approach |
-|--------------|------------------|
-| `from module import *` | Explicit imports |
-| Hardcoded paths | Config files or environment variables |
-| `print()` debugging | Structured logging |
-| Nested try/except | Handle specific exceptions |
-| Global mutable state | Dependency injection |
-| Magic numbers | Named constants |
-| Jupyter in production | `.py` files with proper structure |
-| `torch.load(weights_only=False)` | Always `weights_only=True` |
-
-## Performance Optimization Priority
-
-1. **Algorithm** - O(n) beats O(n²) optimized
-2. **Data I/O** - Async loading, proper batching, prefetching
-3. **Computation** - Mixed precision, compilation (`torch.compile`)
-4. **Memory** - Gradient checkpointing, efficient data types
-5. **Parallelism** - Multi-GPU, distributed training
-
-## Model Deployment Checklist
-
-- [ ] Model exported (ONNX, TorchScript, or SavedModel)
-- [ ] Input validation and sanitization
-- [ ] Batch inference support
-- [ ] Error handling for edge cases
-- [ ] Latency/throughput benchmarks
-- [ ] Memory footprint measured
-- [ ] Monitoring and alerting configured
-- [ ] Rollback strategy defined
-- [ ] A/B testing framework ready
+- Deep learning systems: [references/deep-learning.md](references/deep-learning.md)
+- Transformers and LLMs: [references/transformers-llm.md](references/transformers-llm.md)
+- Computer vision: [references/computer-vision.md](references/computer-vision.md)
+- Classical machine learning: [references/machine-learning.md](references/machine-learning.md)
+- NLP systems: [references/nlp.md](references/nlp.md)
+- MLOps and deployment: [references/mlops.md](references/mlops.md)
+- Production model serving: [references/production-serving.md](references/production-serving.md)
+- Evaluation and release guardrails: [references/evaluation-and-guardrails.md](references/evaluation-and-guardrails.md)
+- Retrieval and RAG systems: [references/retrieval-and-rag-systems.md](references/retrieval-and-rag-systems.md)
+- Inference reliability and cost control: [references/inference-reliability-and-cost.md](references/inference-reliability-and-cost.md)

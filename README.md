@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 8 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 49 specialized domains
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-8-brightgreen.svg)](#-skills-overview)
+[![License: MIT](https://img.shields.io/badge/License/MIT-blue.svg)](LICENSE)
+[![Skills Count](https://img.shields.io/badge/Skills-49-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,19 +20,19 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 8 special
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 49 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 8 specialized domains |
-| **Reference Docs** | 64+ comprehensive guides |
+| **Total Skills** | 49 specialized domains |
+| **Reference Docs** | 400+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
-| **Technologies Covered** | 30+ frameworks and libraries |
+| **Technologies Covered** | 110+ frameworks and libraries |
 | **Expertise Level** | Senior/lead engineer per skill |
-| **Documentation** | 10,000+ lines of battle-tested knowledge |
+| **Documentation** | 38,000+ lines of battle-tested knowledge |
 
 
 ## 🎓 Skills Overview
@@ -84,7 +84,7 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
       <br/>
       <sub>AMQP • Clustering • HA</sub>
       <br/>
-      <a href="devops-skills/rabbitmq-mastery-skill/">📚 Docs</a>
+      <a href="data-skills/rabbitmq-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/react.svg" width="80" height="80" alt="React + TanStack"/>
@@ -116,6 +116,149 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
   </tr>
 </table>
 
+## 🧠 Backend Skills
+
+- **[AI/ML Mastery](backend-skills/ai-ml-mastery-skill/)**
+  Production ML systems, LLM-enabled backends, model serving, evaluation discipline, and MLOps guardrails.
+
+- **[Bun.js + Docker](backend-skills/bunjs-mastery-skill/)**
+  TypeScript APIs, Hono, Docker delivery, operational hardening, and runtime-aware backend design.
+
+- **[Golang](backend-skills/golang-mastery-skill/)**
+  Idiomatic services, concurrency ownership, error handling, performance, and production-grade APIs.
+
+- **[Rust](backend-skills/rust-mastery-skill/)**
+  Memory-safe services, Axum/SQLX patterns, async correctness, and systems-level production rigor.
+
+- **[Zig](backend-skills/zig-mastery-skill/)**
+  Explicit memory management, systems-aware backend design, low-level control, and predictable performance.
+
+- **[Erlang / Elixir](backend-skills/erlang-elixir-mastery-skill/)**
+  OTP supervision, actor-model concurrency, BEAM reliability, distributed systems, and operable services.
+
+## 🗃️ Data Skills
+
+- **[PostgreSQL](data-skills/postgresql-mastery-skill/)**
+  Schema design, indexing, transactions, migrations, reliability, and production operations.
+
+- **[CockroachDB](data-skills/cockroachdb-mastery-skill/)**
+  Distributed SQL, multi-region topology, contention, transaction retries, and survivability.
+
+- **[MongoDB](data-skills/mongodb-mastery-skill/)**
+  Document modeling, indexing, replication, sharding, and operational reliability.
+
+- **[Redis](data-skills/redis-mastery-skill/)**
+  Caching strategy, data structures, persistence tradeoffs, memory pressure, and degraded mode behavior.
+
+- **[Kafka](data-skills/kafka-mastery-skill/)**
+  Topic design, partitioning, consumer groups, delivery semantics, lag, and event-driven operations.
+
+- **[Elasticsearch](data-skills/elasticsearch-mastery-skill/)**
+  Index design, relevance, shard strategy, search operations, and production cluster tuning.
+
+- **[RabbitMQ](data-skills/rabbitmq-mastery-skill/)**
+  AMQP, message patterns, clustering, high availability, and performance tuning.
+
+- **[ClickHouse](data-skills/clickhouse-mastery-skill/)**
+  Columnar analytics, MergeTree design, ingestion, partitioning, and high-scale OLAP operations.
+
+- **[MySQL](data-skills/mysql-mastery-skill/)**
+  Relational schema design, indexing, transactions, replication, online migrations, and operational reliability.
+
+- **[OpenSearch](data-skills/opensearch-mastery-skill/)**
+  Search and log analytics, mappings, shard topology, retention, security, and cluster operations.
+
+- **[NATS](data-skills/nats-mastery-skill/)**
+  Subject design, request-reply, JetStream durability, consumer semantics, and lightweight messaging platform operations.
+
+- **[Cassandra](data-skills/cassandra-mastery-skill/)**
+  Wide-column data modeling, consistency, compaction, repair, and operating large distributed clusters safely.
+
+- **[ScyllaDB](data-skills/scylladb-mastery-skill/)**
+  Shard-aware low-latency wide-column operations, topology, repair discipline, and workload tuning.
+
+- **[Snowflake](data-skills/snowflake-mastery-skill/)**
+  Warehouse strategy, governed data products, security, sharing, and enterprise analytics platform economics.
+
+- **[Flink](data-skills/flink-mastery-skill/)**
+  Stateful stream processing, event-time correctness, checkpoints, scaling, and low-latency data platform operations.
+
+- **[Spark](data-skills/spark-mastery-skill/)**
+  Distributed batch and streaming processing, shuffle-aware performance, lakehouse integration, and cluster economics.
+
+- **[Airflow](data-skills/airflow-mastery-skill/)**
+  DAG design, orchestration reliability, scheduler scaling, dependency control, and workflow platform governance.
+
+- **[dbt](data-skills/dbt-mastery-skill/)**
+  Analytics engineering architecture, model governance, testing, lineage, and trustworthy transformation platform operations.
+
+## ⚙️ DevOps Skills
+
+- **[Docker](devops-skills/docker-mastery-skill/)**
+  Image design, build performance, runtime hardening, networking, debugging, and supply-chain aware delivery.
+
+- **[Kubernetes](devops-skills/kubernetes-mastery-skill/)**
+  Workload design, rollout safety, cluster operations, networking, security, observability, and platform reliability.
+
+- **[Prometheus](devops-skills/prometheus-mastery-skill/)**
+  Metrics strategy, PromQL, alerting, TSDB operations, remote write, and observability platform reliability.
+
+- **[Grafana](devops-skills/grafana-mastery-skill/)**
+  Dashboard design, alerting UX, multi-source correlation, governance, and operator decision workflows.
+
+- **[OpenTelemetry](devops-skills/opentelemetry-mastery-skill/)**
+  Traces, collectors, semantic conventions, sampling, and cross-signal observability architecture.
+
+- **[Terraform](devops-skills/terraform-mastery-skill/)**
+  Module design, state strategy, environment promotion, policy, drift control, and infrastructure change safety.
+
+- **[Helm](devops-skills/helm-mastery-skill/)**
+  Chart design, values governance, release safety, upgrade workflows, and Kubernetes packaging standards.
+
+- **[NGINX Ingress](devops-skills/nginx-ingress-mastery-skill/)**
+  Edge routing, TLS, performance tuning, multi-tenant ingress governance, and production traffic operations.
+
+- **[Istio](devops-skills/istio-mastery-skill/)**
+  Service mesh architecture, traffic policy, mTLS, identity, observability, and multi-tenant mesh operations.
+
+- **[Envoy](devops-skills/envoy-mastery-skill/)**
+  Proxy architecture, listeners, upstream policy, resilience controls, xDS governance, and traffic debugging.
+
+- **[Loki](devops-skills/loki-mastery-skill/)**
+  Log architecture, label strategy, retention, cost-aware query design, and multi-tenant logging platform operations.
+
+- **[Tempo](devops-skills/tempo-mastery-skill/)**
+  Trace storage architecture, ingest scaling, correlation workflows, retention, and shared trace platform reliability.
+
+- **[Jaeger](devops-skills/jaeger-mastery-skill/)**
+  Distributed tracing architecture, sampling, storage backends, query workflows, and operational trace governance.
+
+- **[Ansible](devops-skills/ansible-mastery-skill/)**
+  Idempotent automation, inventory strategy, role design, change safety, and fleet configuration governance.
+
+- **[Pulumi](devops-skills/pulumi-mastery-skill/)**
+  Programmatic IaC, stack design, policy, state safety, multi-language platform tradeoffs, and deployment safety.
+
+- **[Vault](devops-skills/vault-mastery-skill/)**
+  Secrets architecture, auth methods, dynamic secrets, PKI, auditability, and secure platform operations.
+
+- **[GitHub Actions](devops-skills/github-actions-mastery-skill/)**
+  CI/CD workflow design, runner isolation, supply-chain safety, release automation, and multi-repo governance.
+
+- **[Argo CD](devops-skills/argo-cd-mastery-skill/)**
+  GitOps architecture, sync safety, app boundaries, drift control, and declarative delivery platform operations.
+
+- **[Tekton](devops-skills/tekton-mastery-skill/)**
+  Kubernetes-native pipelines, task contracts, execution isolation, provenance, and multi-tenant CI/CD operations.
+
+- **[Keycloak](devops-skills/keycloak-mastery-skill/)**
+  Identity architecture, realms and clients, federation, token lifecycle, and IAM platform governance.
+
+- **[OPA Gatekeeper](devops-skills/opa-gatekeeper-mastery-skill/)**
+  Kubernetes policy architecture, admission safety, Rego governance, exception control, and enforcement operations.
+
+- **[cert-manager](devops-skills/cert-manager-mastery-skill/)**
+  Certificate automation, issuer boundaries, ACME challenge strategy, renewal safety, and PKI operations on Kubernetes.
 
 ## 🚀 Quick Start
 
@@ -126,10 +269,11 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 8 mastery
 
 ### Using Multiple Skills
 Load multiple skills for cross-domain projects:
-```
+```bash
 - backend-skills/golang-mastery-skill (backend API)
 - frontend-skills/react-tanstack-mastery-skill (frontend)
-- devops-skills/rabbitmq-mastery-skill (message broker)
+- data-skills/rabbitmq-mastery-skill (message broker)
+- data-skills/postgresql-mastery-skill (database design and operations)
 ```
 
 ### Example Prompt
@@ -175,7 +319,8 @@ Include:
 **Load Skills**:
 - `backend-skills/golang-mastery-skill` (backend services)
 - `frontend-skills/react-tanstack-mastery-skill` (frontend dashboard)
-- `devops-skills/rabbitmq-mastery-skill` (message broker)
+- `data-skills/rabbitmq-mastery-skill` (message broker)
+- `data-skills/postgresql-mastery-skill` (database design and operations)
 
 **Ask Claude**:
 ```
@@ -183,6 +328,7 @@ Include:
 - Go backend services (orders, inventory, payments)
 - RabbitMQ for async communication
 - React frontend with TanStack Query
+- PostgreSQL database design and operations
 - Docker Compose setup"
 ```
 
@@ -190,6 +336,7 @@ Include:
 - Clean Go microservices architecture
 - RabbitMQ messaging patterns (work queues, pub/sub, RPC)
 - React frontend with proper state management
+- PostgreSQL database design and operations
 - Production-ready Docker setup
 - API design and error handling
 
@@ -286,16 +433,59 @@ claude-codex-skills-directory/
 ├── backend-skills/
 │   ├── ai-ml-mastery-skill/
 │   ├── bunjs-mastery-skill/
+│   ├── erlang-elixir-mastery-skill/
 │   ├── golang-mastery-skill/
-│   └── rust-mastery-skill/
+│   ├── rust-mastery-skill/
+│   └── zig-mastery-skill/
 │
+├── data-skills/
+│   ├── airflow-mastery-skill/
+│   ├── cassandra-mastery-skill/
+│   ├── clickhouse-mastery-skill/
+│   ├── cockroachdb-mastery-skill/
+│   ├── dbt-mastery-skill/
+│   ├── elasticsearch-mastery-skill/
+│   ├── flink-mastery-skill/
+│   ├── kafka-mastery-skill/
+│   ├── mongodb-mastery-skill/
+│   ├── mysql-mastery-skill/
+│   ├── nats-mastery-skill/
+│   ├── opensearch-mastery-skill/
+│   ├── postgresql-mastery-skill/
+│   ├── rabbitmq-mastery-skill/
+│   ├── redis-mastery-skill/
+│   ├── scylladb-mastery-skill/
+│   ├── snowflake-mastery-skill/
+│   └── spark-mastery-skill/
+
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
 │   ├── react-tanstack-mastery-skill/
 │   └── solidjs-solidstart-mastery-skill/
 │
 └── devops-skills/
-    └── rabbitmq-mastery-skill/
+    ├── ansible-mastery-skill/
+    ├── argo-cd-mastery-skill/
+    ├── cert-manager-mastery-skill/
+    ├── docker-mastery-skill/
+    ├── envoy-mastery-skill/
+    ├── github-actions-mastery-skill/
+    ├── grafana-mastery-skill/
+    ├── helm-mastery-skill/
+    ├── istio-mastery-skill/
+    ├── jaeger-mastery-skill/
+    ├── keycloak-mastery-skill/
+    ├── kubernetes-mastery-skill/
+    ├── loki-mastery-skill/
+    ├── nginx-ingress-mastery-skill/
+    ├── opa-gatekeeper-mastery-skill/
+    ├── opentelemetry-mastery-skill/
+    ├── prometheus-mastery-skill/
+    ├── pulumi-mastery-skill/
+    ├── tekton-mastery-skill/
+    ├── tempo-mastery-skill/
+    ├── terraform-mastery-skill/
+    └── vault-mastery-skill/
 ```
 
 
@@ -433,14 +623,15 @@ Senior/Lead Vue.js Developer. Expert in Nuxt 3 full-stack development, TanStack 
   - **Performance**: Code splitting, lazy loading, SSR optimization
   - **Debugging**: Vue DevTools, source maps, error tracking
   - **Common Pitfalls**: Reactivity gotchas, hydration errors
-  - **Security**: XSS prevention, authentication, CSRF
+  - **Security**: Auth patterns, XSS prevention, CSP
   - **Libraries**: Curated Vue ecosystem (Pinia, VueUse, Headless UI)
 
 #### Key Capabilities
 - Build Nuxt 3 full-stack applications (SSR/SSG/SPA)
-- Integrate TanStack Query for server state
-- Implement clean composition API patterns
-- Pinia state management
+- Type-safe routing with TanStack Router
+- Server state management with TanStack Query
+- Advanced data tables with TanStack Table
+- Complex forms with TanStack Form
 - Performance optimization (Core Web Vitals)
 - Security hardening (XSS, auth, CSRF)
 - Production deployment and monitoring
@@ -730,7 +921,7 @@ Example:
 <summary><b>Can I use multiple skills at once?</b></summary>
 
 Yes! Load multiple skills for complex projects. For example:
-- `backend-skills/golang-mastery-skill` + `devops-skills/rabbitmq-mastery-skill` for backend microservices
+- `backend-skills/golang-mastery-skill` + `data-skills/rabbitmq-mastery-skill` for backend microservices
 - `frontend-skills/react-tanstack-mastery-skill` + frontend skills for full-stack apps
 - Any combination that fits your project needs
 

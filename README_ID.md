@@ -4,10 +4,10 @@
 
 **Koleksi Keahlian Engineering Elite untuk Claude AI / ChatGPT Codex**
 
-Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesialisasi
+Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 47 domain spesialisasi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Jumlah Skills](https://img.shields.io/badge/Skills-8-brightgreen.svg)](#-daftar-skills)
+[![Jumlah Skills](https://img.shields.io/badge/Skills-47-brightgreen.svg)](#-daftar-skills)
 [![Bahasa](https://img.shields.io/badge/Bahasa-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-struktur-repositori)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-kontribusi)
@@ -20,19 +20,19 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
 
 ## Apa Ini?
 
-**Claude Codex Skills Directory** adalah koleksi komprehensif dari 8 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
+**Claude Codex Skills Directory** adalah koleksi komprehensif dari 47 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
 
 
 ## 📊 Statistik Singkat
 
 | Metrik | Jumlah |
 |--------|--------|
-| **Total Skills** | 8 domain spesialisasi |
-| **Dokumen Referensi** | 64+ panduan komprehensif |
+| **Total Skills** | 47 domain spesialisasi |
+| **Dokumen Referensi** | 400+ panduan komprehensif |
 | **Script Otomasi** | 8 helper tools |
-| **Teknologi yang Dicakup** | 30+ framework dan library |
+| **Teknologi yang Dicakup** | 110+ framework dan library |
 | **Level Keahlian** | Senior/lead engineer per skill |
-| **Dokumentasi** | 10.000+ baris pengetahuan teruji di produksi |
+| **Dokumentasi** | 38.000+ baris pengetahuan teruji di produksi |
 
 
 ## 🎓 Daftar Skills
@@ -84,7 +84,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>AMQP • Clustering • HA</sub>
       <br/>
-      <a href="devops-skills/rabbitmq-mastery-skill/">📚 Docs</a>
+      <a href="data-skills/rabbitmq-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/react.svg" width="80" height="80" alt="React + TanStack"/>
@@ -116,6 +116,130 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
   </tr>
 </table>
 
+## 🗃️ Data Skills
+
+- **[PostgreSQL](data-skills/postgresql-mastery-skill/)**
+  Desain skema, indexing, transaksi, migrasi, reliability, dan operasi produksi.
+
+- **[CockroachDB](data-skills/cockroachdb-mastery-skill/)**
+  Distributed SQL, topologi multi-region, contention, retry transaksi, dan survivability.
+
+- **[MongoDB](data-skills/mongodb-mastery-skill/)**
+  Document modeling, indexing, replication, sharding, dan reliability operasional.
+
+- **[Redis](data-skills/redis-mastery-skill/)**
+  Strategi caching, data structures, tradeoff persistence, memory pressure, dan degraded mode.
+
+- **[Kafka](data-skills/kafka-mastery-skill/)**
+  Topic design, partitioning, consumer groups, delivery semantics, lag, dan operasi event-driven.
+
+- **[Elasticsearch](data-skills/elasticsearch-mastery-skill/)**
+  Index design, relevance, shard strategy, operasi search, dan tuning cluster produksi.
+
+- **[RabbitMQ](data-skills/rabbitmq-mastery-skill/)**
+  AMQP, message patterns, clustering, high availability, dan performance tuning.
+
+- **[ClickHouse](data-skills/clickhouse-mastery-skill/)**
+  Analitik kolumnar, desain MergeTree, ingestion, partitioning, dan operasi OLAP skala besar.
+
+- **[MySQL](data-skills/mysql-mastery-skill/)**
+  Desain skema relasional, indexing, transaksi, replication, migrasi online, dan reliability operasional.
+
+- **[OpenSearch](data-skills/opensearch-mastery-skill/)**
+  Search dan log analytics, mappings, topologi shard, retention, security, dan operasi cluster.
+
+- **[NATS](data-skills/nats-mastery-skill/)**
+  Subject design, request-reply, durability JetStream, semantik consumer, dan operasi platform messaging ringan.
+
+- **[Cassandra](data-skills/cassandra-mastery-skill/)**
+  Wide-column data modeling, consistency, compaction, repair, dan operasi cluster distributed skala besar yang aman.
+
+- **[ScyllaDB](data-skills/scylladb-mastery-skill/)**
+  Operasi wide-column low-latency yang shard-aware, topologi, repair discipline, dan tuning workload.
+
+- **[Snowflake](data-skills/snowflake-mastery-skill/)**
+  Strategi warehouse, data product yang governed, security, sharing, dan ekonomi platform analytics enterprise.
+
+- **[Flink](data-skills/flink-mastery-skill/)**
+  Stateful stream processing, event-time correctness, checkpoints, scaling, dan operasi platform data low-latency.
+
+- **[Spark](data-skills/spark-mastery-skill/)**
+  Pemrosesan batch dan streaming terdistribusi, performa shuffle-aware, integrasi lakehouse, dan ekonomi cluster.
+
+- **[Airflow](data-skills/airflow-mastery-skill/)**
+  Desain DAG, reliability orchestration, scaling scheduler, kontrol dependency, dan governance platform workflow.
+
+- **[dbt](data-skills/dbt-mastery-skill/)**
+  Arsitektur analytics engineering, governance model, testing, lineage, dan operasi platform transformasi yang terpercaya.
+
+## ⚙️ DevOps Skills
+
+- **[Docker](devops-skills/docker-mastery-skill/)**
+  Image design, build performance, runtime hardening, networking, debugging, dan delivery yang sadar supply chain.
+
+- **[Kubernetes](devops-skills/kubernetes-mastery-skill/)**
+  Workload design, rollout safety, operasi cluster, networking, security, observability, dan reliability platform.
+
+- **[Prometheus](devops-skills/prometheus-mastery-skill/)**
+  Strategi metrics, PromQL, alerting, operasi TSDB, remote write, dan reliability platform observability.
+
+- **[Grafana](devops-skills/grafana-mastery-skill/)**
+  Desain dashboard, UX alerting, korelasi multi-sumber, governance, dan workflow operator.
+
+- **[OpenTelemetry](devops-skills/opentelemetry-mastery-skill/)**
+  Traces, collectors, semantic conventions, sampling, dan arsitektur observability lintas sinyal.
+
+- **[Terraform](devops-skills/terraform-mastery-skill/)**
+  Desain module, strategi state, promosi environment, policy, drift control, dan keamanan perubahan infra.
+
+- **[Helm](devops-skills/helm-mastery-skill/)**
+  Desain chart, governance values, release safety, workflow upgrade, dan standar packaging Kubernetes.
+
+- **[NGINX Ingress](devops-skills/nginx-ingress-mastery-skill/)**
+  Edge routing, TLS, tuning performa, governance ingress multi-tenant, dan operasi traffic produksi.
+
+- **[Istio](devops-skills/istio-mastery-skill/)**
+  Arsitektur service mesh, traffic policy, mTLS, identity, observability, dan operasi mesh multi-tenant.
+
+- **[Envoy](devops-skills/envoy-mastery-skill/)**
+  Arsitektur proxy, listeners, upstream policy, resilience controls, governance xDS, dan debugging traffic.
+
+- **[Loki](devops-skills/loki-mastery-skill/)**
+  Arsitektur log, strategi label, retention, query design yang cost-aware, dan operasi platform logging multi-tenant.
+
+- **[Tempo](devops-skills/tempo-mastery-skill/)**
+  Arsitektur storage trace, scaling ingest, workflow correlation, retention, dan reliability platform trace bersama.
+
+- **[Jaeger](devops-skills/jaeger-mastery-skill/)**
+  Arsitektur distributed tracing, sampling, storage backend, workflow query, dan governance tracing operasional.
+
+- **[Ansible](devops-skills/ansible-mastery-skill/)**
+  Automasi idempotent, strategi inventory, desain role, change safety, dan governance konfigurasi fleet.
+
+- **[Pulumi](devops-skills/pulumi-mastery-skill/)**
+  Programmatic IaC, desain stack, policy, keamanan state, tradeoff multi-language, dan deployment safety.
+
+- **[Vault](devops-skills/vault-mastery-skill/)**
+  Arsitektur secrets, auth methods, dynamic secrets, PKI, auditability, dan operasi platform secrets yang aman.
+
+- **[GitHub Actions](devops-skills/github-actions-mastery-skill/)**
+  Desain workflow CI/CD, isolasi runner, supply-chain safety, release automation, dan governance multi-repo.
+
+- **[Argo CD](devops-skills/argo-cd-mastery-skill/)**
+  Arsitektur GitOps, sync safety, batas aplikasi, drift control, dan operasi platform delivery deklaratif.
+
+- **[Tekton](devops-skills/tekton-mastery-skill/)**
+  Pipeline native Kubernetes, kontrak task, isolasi eksekusi, provenance, dan operasi CI/CD multi-tenant.
+
+- **[Keycloak](devops-skills/keycloak-mastery-skill/)**
+  Arsitektur identity, realms dan clients, federation, lifecycle token, dan governance platform IAM.
+
+- **[OPA Gatekeeper](devops-skills/opa-gatekeeper-mastery-skill/)**
+  Arsitektur policy Kubernetes, admission safety, governance Rego, kontrol exception, dan operasi enforcement.
+
+- **[cert-manager](devops-skills/cert-manager-mastery-skill/)**
+  Automasi sertifikat, batas issuer, strategi challenge ACME, renewal safety, dan operasi PKI di Kubernetes.
+
 
 ## 🚀 Mulai Cepat
 
@@ -129,7 +253,8 @@ Muat beberapa skills untuk proyek lintas domain:
 ```
 - backend-skills/golang-mastery-skill (backend API)
 - frontend-skills/react-tanstack-mastery-skill (frontend)
-- devops-skills/rabbitmq-mastery-skill (message broker)
+- data-skills/rabbitmq-mastery-skill (message broker)
+- data-skills/postgresql-mastery-skill (database design and operations)
 ```
 
 ### Contoh Prompt
@@ -175,7 +300,8 @@ Sertakan:
 **Muat Skills**:
 - `backend-skills/golang-mastery-skill` (backend services)
 - `frontend-skills/react-tanstack-mastery-skill` (frontend dashboard)
-- `devops-skills/rabbitmq-mastery-skill` (message broker)
+- `data-skills/rabbitmq-mastery-skill` (message broker)
+- `data-skills/postgresql-mastery-skill` (database design and operations)
 
 **Tanya Claude**:
 ```
@@ -183,6 +309,7 @@ Sertakan:
 - Backend services Go (orders, inventory, payments)
 - RabbitMQ untuk komunikasi async
 - React frontend dengan TanStack Query
+- PostgreSQL untuk desain dan operasi database
 - Setup Docker Compose"
 ```
 
@@ -190,6 +317,7 @@ Sertakan:
 - Arsitektur microservices Go yang clean
 - Pola messaging RabbitMQ (work queues, pub/sub, RPC)
 - React frontend dengan state management yang proper
+- Desain dan operasi PostgreSQL yang production-ready
 - Setup Docker siap produksi
 - Desain API dan error handling
 
@@ -289,13 +417,54 @@ claude-codex-skills-directory/
 │   ├── golang-mastery-skill/
 │   └── rust-mastery-skill/
 │
+├── data-skills/
+│   ├── airflow-mastery-skill/
+│   ├── cassandra-mastery-skill/
+│   ├── clickhouse-mastery-skill/
+│   ├── cockroachdb-mastery-skill/
+│   ├── dbt-mastery-skill/
+│   ├── elasticsearch-mastery-skill/
+│   ├── flink-mastery-skill/
+│   ├── kafka-mastery-skill/
+│   ├── mongodb-mastery-skill/
+│   ├── mysql-mastery-skill/
+│   ├── nats-mastery-skill/
+│   ├── opensearch-mastery-skill/
+│   ├── postgresql-mastery-skill/
+│   ├── rabbitmq-mastery-skill/
+│   ├── redis-mastery-skill/
+│   ├── scylladb-mastery-skill/
+│   ├── snowflake-mastery-skill/
+│   └── spark-mastery-skill/
+
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
 │   ├── react-tanstack-mastery-skill/
 │   └── solidjs-solidstart-mastery-skill/
 │
 └── devops-skills/
-    └── rabbitmq-mastery-skill/
+    ├── ansible-mastery-skill/
+    ├── argo-cd-mastery-skill/
+    ├── cert-manager-mastery-skill/
+    ├── docker-mastery-skill/
+    ├── envoy-mastery-skill/
+    ├── github-actions-mastery-skill/
+    ├── grafana-mastery-skill/
+    ├── helm-mastery-skill/
+    ├── istio-mastery-skill/
+    ├── jaeger-mastery-skill/
+    ├── keycloak-mastery-skill/
+    ├── kubernetes-mastery-skill/
+    ├── loki-mastery-skill/
+    ├── nginx-ingress-mastery-skill/
+    ├── opa-gatekeeper-mastery-skill/
+    ├── opentelemetry-mastery-skill/
+    ├── prometheus-mastery-skill/
+    ├── pulumi-mastery-skill/
+    ├── tekton-mastery-skill/
+    ├── tempo-mastery-skill/
+    ├── terraform-mastery-skill/
+    └── vault-mastery-skill/
 ```
 
 
@@ -730,7 +899,7 @@ Contoh:
 <summary><b>Apakah bisa menggunakan beberapa skills sekaligus?</b></summary>
 
 Ya! Muat beberapa skills untuk proyek kompleks. Contohnya:
-- `backend-skills/golang-mastery-skill` + `devops-skills/rabbitmq-mastery-skill` untuk backend microservices
+- `backend-skills/golang-mastery-skill` + `data-skills/rabbitmq-mastery-skill` untuk backend microservices
 - `frontend-skills/react-tanstack-mastery-skill` + frontend skills untuk full-stack apps
 - Kombinasi apapun yang sesuai kebutuhan proyek Anda
 
