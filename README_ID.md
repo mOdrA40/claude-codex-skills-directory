@@ -4,10 +4,10 @@
 
 **Koleksi Keahlian Engineering Elite untuk Claude AI / ChatGPT Codex**
 
-Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 16 domain spesialisasi
+Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 26 domain spesialisasi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Jumlah Skills](https://img.shields.io/badge/Skills-16-brightgreen.svg)](#-daftar-skills)
+[![Jumlah Skills](https://img.shields.io/badge/Skills-26-brightgreen.svg)](#-daftar-skills)
 [![Bahasa](https://img.shields.io/badge/Bahasa-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-struktur-repositori)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-kontribusi)
@@ -20,19 +20,19 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 16 domain spesial
 
 ## Apa Ini?
 
-**Claude Codex Skills Directory** adalah koleksi komprehensif dari 16 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
+**Claude Codex Skills Directory** adalah koleksi komprehensif dari 26 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
 
 
 ## 📊 Statistik Singkat
 
 | Metrik | Jumlah |
 |--------|--------|
-| **Total Skills** | 16 domain spesialisasi |
-| **Dokumen Referensi** | 150+ panduan komprehensif |
+| **Total Skills** | 26 domain spesialisasi |
+| **Dokumen Referensi** | 230+ panduan komprehensif |
 | **Script Otomasi** | 8 helper tools |
-| **Teknologi yang Dicakup** | 50+ framework dan library |
+| **Teknologi yang Dicakup** | 70+ framework dan library |
 | **Level Keahlian** | Senior/lead engineer per skill |
-| **Dokumentasi** | 15.000+ baris pengetahuan teruji di produksi |
+| **Dokumentasi** | 22.000+ baris pengetahuan teruji di produksi |
 
 
 ## 🎓 Daftar Skills
@@ -139,6 +139,18 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 16 domain spesial
 - **[RabbitMQ](data-skills/rabbitmq-mastery-skill/)**
   AMQP, message patterns, clustering, high availability, dan performance tuning.
 
+- **[ClickHouse](data-skills/clickhouse-mastery-skill/)**
+  Analitik kolumnar, desain MergeTree, ingestion, partitioning, dan operasi OLAP skala besar.
+
+- **[MySQL](data-skills/mysql-mastery-skill/)**
+  Desain skema relasional, indexing, transaksi, replication, migrasi online, dan reliability operasional.
+
+- **[OpenSearch](data-skills/opensearch-mastery-skill/)**
+  Search dan log analytics, mappings, topologi shard, retention, security, dan operasi cluster.
+
+- **[NATS](data-skills/nats-mastery-skill/)**
+  Subject design, request-reply, durability JetStream, semantik consumer, dan operasi platform messaging ringan.
+
 ## ⚙️ DevOps Skills
 
 - **[Docker](devops-skills/docker-mastery-skill/)**
@@ -146,6 +158,24 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 16 domain spesial
 
 - **[Kubernetes](devops-skills/kubernetes-mastery-skill/)**
   Workload design, rollout safety, operasi cluster, networking, security, observability, dan reliability platform.
+
+- **[Prometheus](devops-skills/prometheus-mastery-skill/)**
+  Strategi metrics, PromQL, alerting, operasi TSDB, remote write, dan reliability platform observability.
+
+- **[Grafana](devops-skills/grafana-mastery-skill/)**
+  Desain dashboard, UX alerting, korelasi multi-sumber, governance, dan workflow operator.
+
+- **[OpenTelemetry](devops-skills/opentelemetry-mastery-skill/)**
+  Traces, collectors, semantic conventions, sampling, dan arsitektur observability lintas sinyal.
+
+- **[Terraform](devops-skills/terraform-mastery-skill/)**
+  Desain module, strategi state, promosi environment, policy, drift control, dan keamanan perubahan infra.
+
+- **[Helm](devops-skills/helm-mastery-skill/)**
+  Desain chart, governance values, release safety, workflow upgrade, dan standar packaging Kubernetes.
+
+- **[NGINX Ingress](devops-skills/nginx-ingress-mastery-skill/)**
+  Edge routing, TLS, tuning performa, governance ingress multi-tenant, dan operasi traffic produksi.
 
 
 ## 🚀 Mulai Cepat
@@ -325,13 +355,18 @@ claude-codex-skills-directory/
 │   └── rust-mastery-skill/
 │
 ├── data-skills/
-│   ├── rabbitmq-mastery-skill/
-│   ├── postgresql-mastery-skill/
+│   ├── clickhouse-mastery-skill/
 │   ├── cockroachdb-mastery-skill/
-│   ├── mongodb-mastery-skill/
-│   ├── redis-mastery-skill/
+│   ├── elasticsearch-mastery-skill/
 │   ├── kafka-mastery-skill/
-│   └── elasticsearch-mastery-skill/
+│   ├── mongodb-mastery-skill/
+│   ├── mysql-mastery-skill/
+│   ├── nats-mastery-skill/
+│   ├── opensearch-mastery-skill/
+│   ├── postgresql-mastery-skill/
+│   ├── rabbitmq-mastery-skill/
+│   ├── redis-mastery-skill/
+│
 │
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
@@ -340,7 +375,13 @@ claude-codex-skills-directory/
 │
 └── devops-skills/
     ├── docker-mastery-skill/
-    └── kubernetes-mastery-skill/
+    ├── grafana-mastery-skill/
+    ├── helm-mastery-skill/
+    ├── kubernetes-mastery-skill/
+    ├── nginx-ingress-mastery-skill/
+    ├── opentelemetry-mastery-skill/
+    ├── prometheus-mastery-skill/
+    └── terraform-mastery-skill/
 ```
 
 

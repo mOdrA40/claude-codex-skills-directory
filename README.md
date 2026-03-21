@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 16 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 26 specialized domains
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-16-brightgreen.svg)](#-skills-overview)
+[![Skills Count](https://img.shields.io/badge/Skills-26-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,19 +20,19 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 16 specia
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 16 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 26 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 16 specialized domains |
-| **Reference Docs** | 150+ comprehensive guides |
+| **Total Skills** | 26 specialized domains |
+| **Reference Docs** | 230+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
-| **Technologies Covered** | 50+ frameworks and libraries |
+| **Technologies Covered** | 70+ frameworks and libraries |
 | **Expertise Level** | Senior/lead engineer per skill |
-| **Documentation** | 15,000+ lines of battle-tested knowledge |
+| **Documentation** | 22,000+ lines of battle-tested knowledge |
 
 
 ## 🎓 Skills Overview
@@ -139,6 +139,18 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 16 master
 - **[RabbitMQ](data-skills/rabbitmq-mastery-skill/)**
   AMQP, message patterns, clustering, high availability, and performance tuning.
 
+- **[ClickHouse](data-skills/clickhouse-mastery-skill/)**
+  Columnar analytics, MergeTree design, ingestion, partitioning, and high-scale OLAP operations.
+
+- **[MySQL](data-skills/mysql-mastery-skill/)**
+  Relational schema design, indexing, transactions, replication, online migrations, and operational reliability.
+
+- **[OpenSearch](data-skills/opensearch-mastery-skill/)**
+  Search and log analytics, mappings, shard topology, retention, security, and cluster operations.
+
+- **[NATS](data-skills/nats-mastery-skill/)**
+  Subject design, request-reply, JetStream durability, consumer semantics, and lightweight messaging platform operations.
+
 ## ⚙️ DevOps Skills
 
 - **[Docker](devops-skills/docker-mastery-skill/)**
@@ -146,6 +158,24 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 16 master
 
 - **[Kubernetes](devops-skills/kubernetes-mastery-skill/)**
   Workload design, rollout safety, cluster operations, networking, security, observability, and platform reliability.
+
+- **[Prometheus](devops-skills/prometheus-mastery-skill/)**
+  Metrics strategy, PromQL, alerting, TSDB operations, remote write, and observability platform reliability.
+
+- **[Grafana](devops-skills/grafana-mastery-skill/)**
+  Dashboard design, alerting UX, multi-source correlation, governance, and operator decision workflows.
+
+- **[OpenTelemetry](devops-skills/opentelemetry-mastery-skill/)**
+  Traces, collectors, semantic conventions, sampling, and cross-signal observability architecture.
+
+- **[Terraform](devops-skills/terraform-mastery-skill/)**
+  Module design, state strategy, environment promotion, policy, drift control, and infrastructure change safety.
+
+- **[Helm](devops-skills/helm-mastery-skill/)**
+  Chart design, values governance, release safety, upgrade workflows, and Kubernetes packaging standards.
+
+- **[NGINX Ingress](devops-skills/nginx-ingress-mastery-skill/)**
+  Edge routing, TLS, performance tuning, multi-tenant ingress governance, and production traffic operations.
 
 ## 🚀 Quick Start
 
@@ -324,13 +354,18 @@ claude-codex-skills-directory/
 │   └── rust-mastery-skill/
 │
 ├── data-skills/
-│   ├── rabbitmq-mastery-skill/
-│   ├── postgresql-mastery-skill/
+│   ├── clickhouse-mastery-skill/
 │   ├── cockroachdb-mastery-skill/
-│   ├── mongodb-mastery-skill/
-│   ├── redis-mastery-skill/
+│   ├── elasticsearch-mastery-skill/
 │   ├── kafka-mastery-skill/
-│   └── elasticsearch-mastery-skill/
+│   ├── mongodb-mastery-skill/
+│   ├── mysql-mastery-skill/
+│   ├── nats-mastery-skill/
+│   ├── opensearch-mastery-skill/
+│   ├── postgresql-mastery-skill/
+│   ├── rabbitmq-mastery-skill/
+│   ├── redis-mastery-skill/
+│
 │
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
@@ -339,7 +374,13 @@ claude-codex-skills-directory/
 │
 └── devops-skills/
     ├── docker-mastery-skill/
-    └── kubernetes-mastery-skill/
+    ├── grafana-mastery-skill/
+    ├── helm-mastery-skill/
+    ├── kubernetes-mastery-skill/
+    ├── nginx-ingress-mastery-skill/
+    ├── opentelemetry-mastery-skill/
+    ├── prometheus-mastery-skill/
+    └── terraform-mastery-skill/
 ```
 
 
