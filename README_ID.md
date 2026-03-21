@@ -4,10 +4,10 @@
 
 **Koleksi Keahlian Engineering Elite untuk Claude AI / ChatGPT Codex**
 
-Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesialisasi
+Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 16 domain spesialisasi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Jumlah Skills](https://img.shields.io/badge/Skills-8-brightgreen.svg)](#-daftar-skills)
+[![Jumlah Skills](https://img.shields.io/badge/Skills-16-brightgreen.svg)](#-daftar-skills)
 [![Bahasa](https://img.shields.io/badge/Bahasa-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-struktur-repositori)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-kontribusi)
@@ -20,19 +20,19 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
 
 ## Apa Ini?
 
-**Claude Codex Skills Directory** adalah koleksi komprehensif dari 8 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
+**Claude Codex Skills Directory** adalah koleksi komprehensif dari 16 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
 
 
 ## 📊 Statistik Singkat
 
 | Metrik | Jumlah |
 |--------|--------|
-| **Total Skills** | 8 domain spesialisasi |
-| **Dokumen Referensi** | 64+ panduan komprehensif |
+| **Total Skills** | 16 domain spesialisasi |
+| **Dokumen Referensi** | 150+ panduan komprehensif |
 | **Script Otomasi** | 8 helper tools |
-| **Teknologi yang Dicakup** | 30+ framework dan library |
+| **Teknologi yang Dicakup** | 50+ framework dan library |
 | **Level Keahlian** | Senior/lead engineer per skill |
-| **Dokumentasi** | 10.000+ baris pengetahuan teruji di produksi |
+| **Dokumentasi** | 15.000+ baris pengetahuan teruji di produksi |
 
 
 ## 🎓 Daftar Skills
@@ -84,7 +84,7 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
       <br/>
       <sub>AMQP • Clustering • HA</sub>
       <br/>
-      <a href="devops-skills/rabbitmq-mastery-skill/">📚 Docs</a>
+      <a href="data-skills/rabbitmq-mastery-skill/">📚 Docs</a>
     </td>
     <td align="center" width="25%">
       <img src="assets/logos/react.svg" width="80" height="80" alt="React + TanStack"/>
@@ -116,6 +116,37 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 8 domain spesiali
   </tr>
 </table>
 
+## 🗃️ Data Skills
+
+- **[PostgreSQL](data-skills/postgresql-mastery-skill/)**
+  Desain skema, indexing, transaksi, migrasi, reliability, dan operasi produksi.
+
+- **[CockroachDB](data-skills/cockroachdb-mastery-skill/)**
+  Distributed SQL, topologi multi-region, contention, retry transaksi, dan survivability.
+
+- **[MongoDB](data-skills/mongodb-mastery-skill/)**
+  Document modeling, indexing, replication, sharding, dan reliability operasional.
+
+- **[Redis](data-skills/redis-mastery-skill/)**
+  Strategi caching, data structures, tradeoff persistence, memory pressure, dan degraded mode.
+
+- **[Kafka](data-skills/kafka-mastery-skill/)**
+  Topic design, partitioning, consumer groups, delivery semantics, lag, dan operasi event-driven.
+
+- **[Elasticsearch](data-skills/elasticsearch-mastery-skill/)**
+  Index design, relevance, shard strategy, operasi search, dan tuning cluster produksi.
+
+- **[RabbitMQ](data-skills/rabbitmq-mastery-skill/)**
+  AMQP, message patterns, clustering, high availability, dan performance tuning.
+
+## ⚙️ DevOps Skills
+
+- **[Docker](devops-skills/docker-mastery-skill/)**
+  Image design, build performance, runtime hardening, networking, debugging, dan delivery yang sadar supply chain.
+
+- **[Kubernetes](devops-skills/kubernetes-mastery-skill/)**
+  Workload design, rollout safety, operasi cluster, networking, security, observability, dan reliability platform.
+
 
 ## 🚀 Mulai Cepat
 
@@ -129,7 +160,8 @@ Muat beberapa skills untuk proyek lintas domain:
 ```
 - backend-skills/golang-mastery-skill (backend API)
 - frontend-skills/react-tanstack-mastery-skill (frontend)
-- devops-skills/rabbitmq-mastery-skill (message broker)
+- data-skills/rabbitmq-mastery-skill (message broker)
+- data-skills/postgresql-mastery-skill (database design and operations)
 ```
 
 ### Contoh Prompt
@@ -175,7 +207,8 @@ Sertakan:
 **Muat Skills**:
 - `backend-skills/golang-mastery-skill` (backend services)
 - `frontend-skills/react-tanstack-mastery-skill` (frontend dashboard)
-- `devops-skills/rabbitmq-mastery-skill` (message broker)
+- `data-skills/rabbitmq-mastery-skill` (message broker)
+- `data-skills/postgresql-mastery-skill` (database design and operations)
 
 **Tanya Claude**:
 ```
@@ -183,6 +216,7 @@ Sertakan:
 - Backend services Go (orders, inventory, payments)
 - RabbitMQ untuk komunikasi async
 - React frontend dengan TanStack Query
+- PostgreSQL untuk desain dan operasi database
 - Setup Docker Compose"
 ```
 
@@ -190,6 +224,7 @@ Sertakan:
 - Arsitektur microservices Go yang clean
 - Pola messaging RabbitMQ (work queues, pub/sub, RPC)
 - React frontend dengan state management yang proper
+- Desain dan operasi PostgreSQL yang production-ready
 - Setup Docker siap produksi
 - Desain API dan error handling
 
@@ -289,13 +324,23 @@ claude-codex-skills-directory/
 │   ├── golang-mastery-skill/
 │   └── rust-mastery-skill/
 │
+├── data-skills/
+│   ├── rabbitmq-mastery-skill/
+│   ├── postgresql-mastery-skill/
+│   ├── cockroachdb-mastery-skill/
+│   ├── mongodb-mastery-skill/
+│   ├── redis-mastery-skill/
+│   ├── kafka-mastery-skill/
+│   └── elasticsearch-mastery-skill/
+│
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
 │   ├── react-tanstack-mastery-skill/
 │   └── solidjs-solidstart-mastery-skill/
 │
 └── devops-skills/
-    └── rabbitmq-mastery-skill/
+    ├── docker-mastery-skill/
+    └── kubernetes-mastery-skill/
 ```
 
 
@@ -730,7 +775,7 @@ Contoh:
 <summary><b>Apakah bisa menggunakan beberapa skills sekaligus?</b></summary>
 
 Ya! Muat beberapa skills untuk proyek kompleks. Contohnya:
-- `backend-skills/golang-mastery-skill` + `devops-skills/rabbitmq-mastery-skill` untuk backend microservices
+- `backend-skills/golang-mastery-skill` + `data-skills/rabbitmq-mastery-skill` untuk backend microservices
 - `frontend-skills/react-tanstack-mastery-skill` + frontend skills untuk full-stack apps
 - Kombinasi apapun yang sesuai kebutuhan proyek Anda
 
