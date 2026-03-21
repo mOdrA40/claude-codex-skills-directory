@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 37 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 47 specialized domains
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-37-brightgreen.svg)](#-skills-overview)
+[![Skills Count](https://img.shields.io/badge/Skills-47-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,19 +20,19 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 37 specia
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 37 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 47 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 37 specialized domains |
-| **Reference Docs** | 320+ comprehensive guides |
+| **Total Skills** | 47 specialized domains |
+| **Reference Docs** | 400+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
-| **Technologies Covered** | 90+ frameworks and libraries |
+| **Technologies Covered** | 110+ frameworks and libraries |
 | **Expertise Level** | Senior/lead engineer per skill |
-| **Documentation** | 30,000+ lines of battle-tested knowledge |
+| **Documentation** | 38,000+ lines of battle-tested knowledge |
 
 
 ## 🎓 Skills Overview
@@ -160,6 +160,18 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 37 master
 - **[Snowflake](data-skills/snowflake-mastery-skill/)**
   Warehouse strategy, governed data products, security, sharing, and enterprise analytics platform economics.
 
+- **[Flink](data-skills/flink-mastery-skill/)**
+  Stateful stream processing, event-time correctness, checkpoints, scaling, and low-latency data platform operations.
+
+- **[Spark](data-skills/spark-mastery-skill/)**
+  Distributed batch and streaming processing, shuffle-aware performance, lakehouse integration, and cluster economics.
+
+- **[Airflow](data-skills/airflow-mastery-skill/)**
+  DAG design, orchestration reliability, scheduler scaling, dependency control, and workflow platform governance.
+
+- **[dbt](data-skills/dbt-mastery-skill/)**
+  Analytics engineering architecture, model governance, testing, lineage, and trustworthy transformation platform operations.
+
 ## ⚙️ DevOps Skills
 
 - **[Docker](devops-skills/docker-mastery-skill/)**
@@ -209,6 +221,24 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 37 master
 
 - **[Vault](devops-skills/vault-mastery-skill/)**
   Secrets architecture, auth methods, dynamic secrets, PKI, auditability, and secure platform operations.
+
+- **[GitHub Actions](devops-skills/github-actions-mastery-skill/)**
+  CI/CD workflow design, runner isolation, supply-chain safety, release automation, and multi-repo governance.
+
+- **[Argo CD](devops-skills/argo-cd-mastery-skill/)**
+  GitOps architecture, sync safety, app boundaries, drift control, and declarative delivery platform operations.
+
+- **[Tekton](devops-skills/tekton-mastery-skill/)**
+  Kubernetes-native pipelines, task contracts, execution isolation, provenance, and multi-tenant CI/CD operations.
+
+- **[Keycloak](devops-skills/keycloak-mastery-skill/)**
+  Identity architecture, realms and clients, federation, token lifecycle, and IAM platform governance.
+
+- **[OPA Gatekeeper](devops-skills/opa-gatekeeper-mastery-skill/)**
+  Kubernetes policy architecture, admission safety, Rego governance, exception control, and enforcement operations.
+
+- **[cert-manager](devops-skills/cert-manager-mastery-skill/)**
+  Certificate automation, issuer boundaries, ACME challenge strategy, renewal safety, and PKI operations on Kubernetes.
 
 ## 🚀 Quick Start
 
@@ -387,10 +417,13 @@ claude-codex-skills-directory/
 │   └── rust-mastery-skill/
 │
 ├── data-skills/
+│   ├── airflow-mastery-skill/
 │   ├── cassandra-mastery-skill/
 │   ├── clickhouse-mastery-skill/
 │   ├── cockroachdb-mastery-skill/
+│   ├── dbt-mastery-skill/
 │   ├── elasticsearch-mastery-skill/
+│   ├── flink-mastery-skill/
 │   ├── kafka-mastery-skill/
 │   ├── mongodb-mastery-skill/
 │   ├── mysql-mastery-skill/
@@ -400,7 +433,8 @@ claude-codex-skills-directory/
 │   ├── rabbitmq-mastery-skill/
 │   ├── redis-mastery-skill/
 │   ├── scylladb-mastery-skill/
-│   └── snowflake-mastery-skill/
+│   ├── snowflake-mastery-skill/
+│   └── spark-mastery-skill/
 
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
@@ -409,18 +443,24 @@ claude-codex-skills-directory/
 │
 └── devops-skills/
     ├── ansible-mastery-skill/
+    ├── argo-cd-mastery-skill/
+    ├── cert-manager-mastery-skill/
     ├── docker-mastery-skill/
     ├── envoy-mastery-skill/
+    ├── github-actions-mastery-skill/
     ├── grafana-mastery-skill/
     ├── helm-mastery-skill/
     ├── istio-mastery-skill/
     ├── jaeger-mastery-skill/
+    ├── keycloak-mastery-skill/
     ├── kubernetes-mastery-skill/
     ├── loki-mastery-skill/
     ├── nginx-ingress-mastery-skill/
+    ├── opa-gatekeeper-mastery-skill/
     ├── opentelemetry-mastery-skill/
     ├── prometheus-mastery-skill/
     ├── pulumi-mastery-skill/
+    ├── tekton-mastery-skill/
     ├── tempo-mastery-skill/
     ├── terraform-mastery-skill/
     └── vault-mastery-skill/

@@ -4,10 +4,10 @@
 
 **Koleksi Keahlian Engineering Elite untuk Claude AI / ChatGPT Codex**
 
-Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 37 domain spesialisasi
+Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 47 domain spesialisasi
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Jumlah Skills](https://img.shields.io/badge/Skills-37-brightgreen.svg)](#-daftar-skills)
+[![Jumlah Skills](https://img.shields.io/badge/Skills-47-brightgreen.svg)](#-daftar-skills)
 [![Bahasa](https://img.shields.io/badge/Bahasa-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-struktur-repositori)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-kontribusi)
@@ -20,19 +20,19 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 37 domain spesial
 
 ## Apa Ini?
 
-**Claude Codex Skills Directory** adalah koleksi komprehensif dari 37 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
+**Claude Codex Skills Directory** adalah koleksi komprehensif dari 47 sistem keahlian tingkat master yang mengubah Claude AI / ChatGPT Codex menjadi senior/lead engineer kelas dunia di berbagai domain teknologi. Setiap skill mewujudkan pengalaman produksi dengan pola-pola yang terbukti di lapangan, anti-pattern yang harus dihindari, strategi debugging, dan framework pengambilan keputusan di dunia nyata.
 
 
 ## 📊 Statistik Singkat
 
 | Metrik | Jumlah |
 |--------|--------|
-| **Total Skills** | 37 domain spesialisasi |
-| **Dokumen Referensi** | 320+ panduan komprehensif |
+| **Total Skills** | 47 domain spesialisasi |
+| **Dokumen Referensi** | 400+ panduan komprehensif |
 | **Script Otomasi** | 8 helper tools |
-| **Teknologi yang Dicakup** | 90+ framework dan library |
+| **Teknologi yang Dicakup** | 110+ framework dan library |
 | **Level Keahlian** | Senior/lead engineer per skill |
-| **Dokumentasi** | 30.000+ baris pengetahuan teruji di produksi |
+| **Dokumentasi** | 38.000+ baris pengetahuan teruji di produksi |
 
 
 ## 🎓 Daftar Skills
@@ -160,6 +160,18 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 37 domain spesial
 - **[Snowflake](data-skills/snowflake-mastery-skill/)**
   Strategi warehouse, data product yang governed, security, sharing, dan ekonomi platform analytics enterprise.
 
+- **[Flink](data-skills/flink-mastery-skill/)**
+  Stateful stream processing, event-time correctness, checkpoints, scaling, dan operasi platform data low-latency.
+
+- **[Spark](data-skills/spark-mastery-skill/)**
+  Pemrosesan batch dan streaming terdistribusi, performa shuffle-aware, integrasi lakehouse, dan ekonomi cluster.
+
+- **[Airflow](data-skills/airflow-mastery-skill/)**
+  Desain DAG, reliability orchestration, scaling scheduler, kontrol dependency, dan governance platform workflow.
+
+- **[dbt](data-skills/dbt-mastery-skill/)**
+  Arsitektur analytics engineering, governance model, testing, lineage, dan operasi platform transformasi yang terpercaya.
+
 ## ⚙️ DevOps Skills
 
 - **[Docker](devops-skills/docker-mastery-skill/)**
@@ -209,6 +221,24 @@ Ubah Claude AI / ChatGPT Codex menjadi senior/lead engineer di 37 domain spesial
 
 - **[Vault](devops-skills/vault-mastery-skill/)**
   Arsitektur secrets, auth methods, dynamic secrets, PKI, auditability, dan operasi platform secrets yang aman.
+
+- **[GitHub Actions](devops-skills/github-actions-mastery-skill/)**
+  Desain workflow CI/CD, isolasi runner, supply-chain safety, release automation, dan governance multi-repo.
+
+- **[Argo CD](devops-skills/argo-cd-mastery-skill/)**
+  Arsitektur GitOps, sync safety, batas aplikasi, drift control, dan operasi platform delivery deklaratif.
+
+- **[Tekton](devops-skills/tekton-mastery-skill/)**
+  Pipeline native Kubernetes, kontrak task, isolasi eksekusi, provenance, dan operasi CI/CD multi-tenant.
+
+- **[Keycloak](devops-skills/keycloak-mastery-skill/)**
+  Arsitektur identity, realms dan clients, federation, lifecycle token, dan governance platform IAM.
+
+- **[OPA Gatekeeper](devops-skills/opa-gatekeeper-mastery-skill/)**
+  Arsitektur policy Kubernetes, admission safety, governance Rego, kontrol exception, dan operasi enforcement.
+
+- **[cert-manager](devops-skills/cert-manager-mastery-skill/)**
+  Automasi sertifikat, batas issuer, strategi challenge ACME, renewal safety, dan operasi PKI di Kubernetes.
 
 
 ## 🚀 Mulai Cepat
@@ -388,10 +418,13 @@ claude-codex-skills-directory/
 │   └── rust-mastery-skill/
 │
 ├── data-skills/
+│   ├── airflow-mastery-skill/
 │   ├── cassandra-mastery-skill/
 │   ├── clickhouse-mastery-skill/
 │   ├── cockroachdb-mastery-skill/
+│   ├── dbt-mastery-skill/
 │   ├── elasticsearch-mastery-skill/
+│   ├── flink-mastery-skill/
 │   ├── kafka-mastery-skill/
 │   ├── mongodb-mastery-skill/
 │   ├── mysql-mastery-skill/
@@ -401,7 +434,8 @@ claude-codex-skills-directory/
 │   ├── rabbitmq-mastery-skill/
 │   ├── redis-mastery-skill/
 │   ├── scylladb-mastery-skill/
-│   └── snowflake-mastery-skill/
+│   ├── snowflake-mastery-skill/
+│   └── spark-mastery-skill/
 
 ├── frontend-skills/
 │   ├── nuxtjs-mastery-skill/
@@ -410,18 +444,24 @@ claude-codex-skills-directory/
 │
 └── devops-skills/
     ├── ansible-mastery-skill/
+    ├── argo-cd-mastery-skill/
+    ├── cert-manager-mastery-skill/
     ├── docker-mastery-skill/
     ├── envoy-mastery-skill/
+    ├── github-actions-mastery-skill/
     ├── grafana-mastery-skill/
     ├── helm-mastery-skill/
     ├── istio-mastery-skill/
     ├── jaeger-mastery-skill/
+    ├── keycloak-mastery-skill/
     ├── kubernetes-mastery-skill/
     ├── loki-mastery-skill/
     ├── nginx-ingress-mastery-skill/
+    ├── opa-gatekeeper-mastery-skill/
     ├── opentelemetry-mastery-skill/
     ├── prometheus-mastery-skill/
     ├── pulumi-mastery-skill/
+    ├── tekton-mastery-skill/
     ├── tempo-mastery-skill/
     ├── terraform-mastery-skill/
     └── vault-mastery-skill/
