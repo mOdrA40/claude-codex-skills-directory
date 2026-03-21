@@ -68,6 +68,8 @@ If you want PowerShell entrypoints:
 
 See [references/project-structure.md](references/project-structure.md) for pragmatic layouts by project size, dependency direction guidance, and package naming heuristics.
 
+See [references/service-skeletons.md](references/service-skeletons.md) for production-safe service layout templates by complexity level.
+
 ## Tooling (Up-to-date defaults)
 
 See [references/tooling.md](references/tooling.md) for a safe baseline linter set, handling false positives, and configuration patterns.
@@ -78,11 +80,13 @@ Use these when the project demands “senior+” rigor (many sections include �
 
 - Arsitektur & boundaries: [references/architecture.md](references/architecture.md)
 - Principal playbook (casebook + decision tree): [references/principal-playbook.md](references/principal-playbook.md)
+- Principal decision matrix: [references/principal-decision-matrix.md](references/principal-decision-matrix.md)
 - Coding standards (review-required): [references/coding-standards.md](references/coding-standards.md)
 - Anti-patterns & bug traps: [references/anti-patterns.md](references/anti-patterns.md)
 - Concurrency (race/leak/backpressure): [references/concurrency.md](references/concurrency.md)
 - Errors & taxonomy: [references/errors.md](references/errors.md)
 - HTTP API & status codes: [references/http-api.md](references/http-api.md)
+- API evolution and compatibility: [references/api-evolution-and-compatibility.md](references/api-evolution-and-compatibility.md)
 - gRPC (contracts, deadlines, streaming, retries): [references/grpc.md](references/grpc.md)
 - Frameworks (Gin/Fiber/Beego): [references/frameworks.md](references/frameworks.md)
 - Database & queries: [references/database.md](references/database.md)
@@ -90,11 +94,16 @@ Use these when the project demands “senior+” rigor (many sections include �
 - Query engineering (Postgres/SQLC): [references/query-engineering.md](references/query-engineering.md)
 - Auth (sessions/JWT/OAuth2): [references/auth.md](references/auth.md)
 - Multi-tenant systems (isolation, quotas, blast radius): [references/multi-tenant-systems.md](references/multi-tenant-systems.md)
+- Cache and consistency patterns: [references/cache-and-consistency-patterns.md](references/cache-and-consistency-patterns.md)
 - Outbound HTTP & SSRF hardening: [references/outbound-http.md](references/outbound-http.md)
 - Idempotency & outbox: [references/idempotency-outbox.md](references/idempotency-outbox.md)
+- Workers and queue consumers: [references/workers-and-consumers.md](references/workers-and-consumers.md)
+- Service governance and ownership: [references/service-governance-and-ownership.md](references/service-governance-and-ownership.md)
 - Security: [references/security.md](references/security.md)
 - Reliability (timeouts, retries, backpressure): [references/reliability.md](references/reliability.md)
+- Scaling and load shedding: [references/scaling-and-load-shedding.md](references/scaling-and-load-shedding.md)
 - Observability (OTel, correlation): [references/observability.md](references/observability.md)
+- Debugging playbook: [references/debugging-playbook.md](references/debugging-playbook.md)
 - Incident runbooks (triage, rollback, blast-radius control): [references/incident-runbooks.md](references/incident-runbooks.md)
 - Log/trace correlation: [references/log-correlation.md](references/log-correlation.md)
 - OTel bootstrap: [references/otel-bootstrap.md](references/otel-bootstrap.md)

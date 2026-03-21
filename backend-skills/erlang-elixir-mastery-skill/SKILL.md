@@ -141,7 +141,13 @@ Prefer another backend stack when:
 ## References
 
 - OTP design and supervision boundaries: [references/otp-design.md](references/otp-design.md)
+- Service boundaries and domain design: [references/service-boundaries-and-domain-design.md](references/service-boundaries-and-domain-design.md)
+- Failure stories and recovery patterns: [references/failure-stories-and-recovery-patterns.md](references/failure-stories-and-recovery-patterns.md)
+- Ecto transactions and outbox: [references/ecto-transactions-and-outbox.md](references/ecto-transactions-and-outbox.md)
 - Phoenix and service boundaries: [references/phoenix-and-boundaries.md](references/phoenix-and-boundaries.md)
+- Broadway, GenStage, and consumer pipelines: [references/broadway-genstage-and-consumers.md](references/broadway-genstage-and-consumers.md)
 - Distributed systems and operations: [references/distributed-systems-and-operations.md](references/distributed-systems-and-operations.md)
+- Multi-tenant BEAM systems: [references/multi-tenant-beam-systems.md](references/multi-tenant-beam-systems.md)
+- Release engineering and deploy safety: [references/release-engineering-and-deploy-safety.md](references/release-engineering-and-deploy-safety.md)
 - Telemetry and observability: [references/telemetry-and-observability.md](references/telemetry-and-observability.md)
 - Incident runbooks: [references/incident-runbooks.md](references/incident-runbooks.md)

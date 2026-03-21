@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 49 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 50 specialized domains
 
 [![License: MIT](https://img.shields.io/badge/License/MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-49-brightgreen.svg)](#-skills-overview)
+[![Skills Count](https://img.shields.io/badge/Skills-50-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,14 +20,14 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 49 specia
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 49 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 50 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 49 specialized domains |
+| **Total Skills** | 50 specialized domains |
 | **Reference Docs** | 400+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
 | **Technologies Covered** | 110+ frameworks and libraries |
@@ -126,6 +126,9 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 49 master
 
 - **[Golang](backend-skills/golang-mastery-skill/)**
   Idiomatic services, concurrency ownership, error handling, performance, and production-grade APIs.
+
+- **[Node.js](backend-skills/nodejs-mastery-skill/)**
+  Event-loop aware backend design, service boundaries, reliability, security, background jobs, and production operations.
 
 - **[Rust](backend-skills/rust-mastery-skill/)**
   Memory-safe services, Axum/SQLX patterns, async correctness, and systems-level production rigor.
@@ -435,6 +438,7 @@ claude-codex-skills-directory/
 │   ├── bunjs-mastery-skill/
 │   ├── erlang-elixir-mastery-skill/
 │   ├── golang-mastery-skill/
+│   ├── nodejs-mastery-skill/
 │   ├── rust-mastery-skill/
 │   └── zig-mastery-skill/
 │
@@ -501,16 +505,24 @@ Elite AI/ML Senior Engineer (DeepMind/OpenAI/Anthropic level). Transforms Claude
 
 #### What's Included
 - **SKILL.md**: Core expertise guide with decision frameworks
-- **References** (9 files):
+- **References** (17 files):
   - **Deep Learning**: PyTorch, TensorFlow, JAX architectures
   - **Transformers & LLMs**: Fine-tuning, PEFT, LoRA, attention mechanisms
   - **Computer Vision**: Object detection, segmentation, GANs, CNNs
   - **Machine Learning**: sklearn, XGBoost, feature engineering, ensembles
   - **NLP**: Embeddings, sentiment analysis, NER, classification
   - **MLOps**: Deployment, monitoring, Docker, CI/CD
-  - **Clean Code**: Patterns, anti-patterns, testing
-  - **Debugging**: Profiling, optimization, troubleshooting
-  - **Data Engineering**: pandas, polars, dask, data pipelines
+  - **Feature/Data Contracts**: Offline/online consistency, feature ownership, skew control
+  - **Serving Architecture**: Production inference APIs, rollback, budgets, fallback design
+  - **Batch vs Online**: Synchronous and asynchronous inference tradeoffs
+  - **Evaluation Guardrails**: Release gates, protected slices, regression thresholds
+  - **Evaluation Harness**: Reproducible evaluation workflows and comparability discipline
+  - **RAG Systems**: Retrieval, reranking, grounding, context budgeting, failure handling
+  - **Registry Governance**: Promotion policy, artifact lineage, rollback trust
+  - **Drift Detection**: Silent degradation signals, model health monitoring, observability
+  - **Inference Reliability/Cost**: Concurrency, cost ceilings, degraded mode, token control
+  - **LLM Safety**: Prompt injection, adversarial inputs, tool safety, unsafe output containment
+  - **ML Incident Response**: Model disable, fallback strategy, serving failure triage
 
 #### Key Capabilities
 - Build production ML/DL models from scratch
@@ -539,11 +551,29 @@ Senior/Lead Developer in modern JavaScript/TypeScript. Expert in Bun.js runtime 
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
-- **References** (4 files):
+- **References** (22 files):
   - **Clean Code Patterns**: Design patterns, SOLID principles
   - **Debugging Guide**: Systematic troubleshooting
   - **Docker Patterns**: Multi-stage builds, optimization
-  - **Testing Strategy**: Unit, integration, E2E testing
+  - **Library Arsenal**: Battle-tested Bun ecosystem choices
+  - **Architecture Decision Framework**: Choosing service shape and boundary strength
+  - **Production Decision Matrix**: Runtime and architecture tradeoffs by workload shape
+  - **Framework Selection**: Hono vs Elysia vs minimal HTTP
+  - **Edge vs Server Runtime**: Operational and deployment tradeoffs
+  - **Hono API Patterns**: Thin handlers, middleware discipline, transport clarity
+  - **Hono Middleware Governance**: Cross-cutting concern control without hidden architecture
+  - **Elysia Patterns**: Typed contracts and framework boundary discipline
+  - **Elysia Plugin Risk**: Plugin ordering, hidden behavior, operational opacity control
+  - **Schema Contracts**: Runtime validation and TS type consistency
+  - **Contract Mapping**: Stable response contracts and downstream response validation
+  - **Auth & Session Security**: Bun-native auth hardening and session boundaries
+  - **Background Processing**: Jobs, consumers, ownership, retry semantics
+  - **Database & Transactions**: Local invariants and side-effect coordination
+  - **Drizzle & Migrations**: Expand-contract safety and deploy compatibility
+  - **Observability**: Logging, metrics, request IDs, runtime visibility
+  - **Runtime Operability**: Startup, shutdown, saturation, health, crash signals
+  - **Realtime/WebSocket**: Subscription governance, fan-out control, connection lifecycle
+  - **Incident Response**: Operator decision paths for regressions and overload
 - **Scripts** (2 files):
   - **init-project.sh**: Bootstrap new Bun.js projects
   - **healthcheck.ts**: Health check endpoint template
@@ -576,7 +606,7 @@ Golang Senior/Lead Developer. Expert in Go idioms, concurrency patterns, and pro
 
 #### What's Included
 - **SKILL.md**: Core expertise guide
-- **References** (10 files):
+- **References** (42 files):
   - **Patterns**: Design patterns in Go (factory, singleton, middleware)
   - **Anti-Patterns**: Common mistakes to avoid
   - **Concurrency**: Goroutines, channels, race conditions, sync primitives
@@ -584,9 +614,22 @@ Golang Senior/Lead Developer. Expert in Go idioms, concurrency patterns, and pro
   - **Libraries**: Battle-tested packages (Chi, SQLX, Viper, Zap)
   - **Coding Standards**: Go idioms, gofmt, golangci-lint
   - **Debugging**: pprof, tracing, profiling
+  - **Debugging Playbook**: Failure classification and investigation order in production
   - **Code Review**: Senior-level review checklist
   - **Project Structure**: Standard Go project layout
+  - **Service Skeletons**: Layout templates by service complexity and topology
+  - **Principal Decision Matrix**: Complexity, boundary, and split/no-split tradeoffs
   - **Examples**: Real-world code examples
+  - **HTTP/gRPC**: Contracts, deadlines, status mapping, streaming considerations
+  - **API Evolution**: Compatibility strategy and long-lived contract change discipline
+  - **Database/Queries**: SQL correctness, migrations, query engineering, rollback-safe change
+  - **Workers/Consumers**: Queue semantics, bounded concurrency, drain behavior, retries
+  - **Cache/Consistency**: Freshness policy, invalidation, degraded mode, stale-read tradeoffs
+  - **Service Governance**: Ownership, operational budgets, incident responsibility
+  - **Reliability/Scaling**: Load shedding, retry containment, overload management
+  - **Security/Outbound IO**: SSRF, credentials, least privilege, input boundary hardening
+  - **Observability/OTel**: Correlation, bootstrapping, incident-facing telemetry
+  - **Distributed Systems**: Blast radius, multi-tenant operation, outbox discipline
 - **Scripts**:
   - **init_project.py**: Project scaffolder with templates
 
@@ -601,6 +644,48 @@ Golang Senior/Lead Developer. Expert in Go idioms, concurrency patterns, and pro
 
 #### Trigger Keywords
 `Go`, `Golang`, `goroutine`, `channel`, `concurrency`, `microservice`, `Chi`, `SQLX`
+
+</details>
+
+---
+
+### 🟢 Node.js Mastery
+
+<details>
+<summary><b>Click to expand</b> - Node.js, TypeScript, Fastify, NestJS, Event Loop, Queues</summary>
+
+#### Overview
+Senior/Principal Node.js backend engineering playbook focused on service boundaries, event-loop aware design, reliability, observability, transaction discipline, and production incident handling.
+
+#### What's Included
+- **SKILL.md**: Core expertise guide
+- **References** (16 files):
+  - **Architecture**: Layered boundaries and modular service design
+  - **Architecture Decision Framework**: When to stay simple vs add stronger service structure
+  - **Event Loop & Concurrency**: Cancellation, fan-out control, CPU-bound isolation
+  - **Event-Driven/Outbox**: Durable publication and replay-safe async workflows
+  - **HTTP/API Frameworks**: Express/Fastify/NestJS tradeoffs and route discipline
+  - **Database/Transactions**: Local invariants, remote side-effect coordination
+  - **Fastify Patterns**: Plugin boundaries and schema-led transport rigor
+  - **NestJS Boundaries**: Module ownership and framework coupling control
+  - **Schema Contracts**: Validation, compatibility tests, downstream contract defense
+  - **Multi-Tenancy**: Tenant isolation, fairness, cache and queue scoping
+  - **Streaming/Backpressure**: Flow control, cancellation, memory safety
+  - **Worker Threads**: CPU-heavy task isolation and concurrency governance
+  - **Reliability/Rollouts**: Graceful deploys, shutdown, version-safe operations
+  - **Observability Playbook**: Event-loop lag, queue signals, dependency triage
+  - **Webhook Safety**: Signature verification, replay handling, delivery discipline
+  - **Failure Stories**: Real operational anti-patterns and hidden backend traps
+
+#### Key Capabilities
+- Build production-grade Node.js APIs with explicit service boundaries
+- Review Fastify and NestJS architectures with senior/principal rigor
+- Prevent event-loop collapse from CPU work, fan-out, and hidden buffering
+- Design reliable queues, consumers, webhooks, and event-driven workflows
+- Improve operability with meaningful readiness, observability, and rollout discipline
+
+#### Trigger Keywords
+`Node.js`, `Node`, `Fastify`, `NestJS`, `Express`, `event loop`, `worker threads`, `queues`, `webhook`, `TypeScript backend`
 
 </details>
 

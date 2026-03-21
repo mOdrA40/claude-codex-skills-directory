@@ -122,7 +122,13 @@ Prefer another backend stack when:
 ## References
 
 - Architecture and dependency direction: [references/architecture.md](references/architecture.md)
+- Service architecture decision framework: [references/service-architecture-decision-framework.md](references/service-architecture-decision-framework.md)
+- Anti-patterns and operational smells: [references/anti-patterns-and-operational-smells.md](references/anti-patterns-and-operational-smells.md)
 - Allocator strategy and memory ownership: [references/allocators-and-memory.md](references/allocators-and-memory.md)
+- Data contracts and versioning: [references/data-contracts-and-versioning.md](references/data-contracts-and-versioning.md)
 - HTTP service design and reliability: [references/http-and-reliability.md](references/http-and-reliability.md)
 - FFI and unsafe boundary control: [references/ffi-and-unsafe-boundaries.md](references/ffi-and-unsafe-boundaries.md)
+- Workers and background jobs: [references/workers-and-background-jobs.md](references/workers-and-background-jobs.md)
+- Observability and incidents: [references/observability-and-incidents.md](references/observability-and-incidents.md)
+- Rollouts and release safety: [references/rollouts-and-release-safety.md](references/rollouts-and-release-safety.md)
 - Testing and debugging: [references/testing-and-debugging.md](references/testing-and-debugging.md)
