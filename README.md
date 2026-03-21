@@ -4,10 +4,10 @@
 
 **Elite Engineering Mastery Collection for Claude AI / ChatGPT Codex**
 
-Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 54 specialized domains
+Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 64 specialized domains
 
 [![License: MIT](https://img.shields.io/badge/License/MIT-blue.svg)](LICENSE)
-[![Skills Count](https://img.shields.io/badge/Skills-54-brightgreen.svg)](#-skills-overview)
+[![Skills Count](https://img.shields.io/badge/Skills-64-brightgreen.svg)](#-skills-overview)
 [![Languages](https://img.shields.io/badge/Languages-Python%20%7C%20TypeScript%20%7C%20Go%20%7C%20Rust-orange.svg)](#-repository-structure)
 [![Maintained](https://img.shields.io/badge/Maintained-Yes-success.svg)](#)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](#-contributing)
@@ -20,14 +20,14 @@ Transform Claude AI / ChatGPT Codex into a senior/lead engineer across 54 specia
 
 ## What is This?
 
-The **Claude Codex Skills Directory** is a comprehensive collection of 54 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
+The **Claude Codex Skills Directory** is a comprehensive collection of 64 mastery-level expertise systems that transform Claude AI / ChatGPT Codex into a world-class senior/lead engineer across multiple technology domains. Each skill embodies production experience with battle-tested patterns, anti-patterns to avoid, debugging strategies, and real-world decision frameworks.
 
 
 ## 📊 Skills at a Glance
 
 | Metric | Count |
 |--------|-------|
-| **Total Skills** | 54 specialized domains |
+| **Total Skills** | 64 specialized domains |
 | **Reference Docs** | 400+ comprehensive guides |
 | **Automation Scripts** | 8 helper tools |
 | **Technologies Covered** | 110+ frameworks and libraries |
@@ -161,6 +161,36 @@ The **Claude Codex Skills Directory** is a comprehensive collection of 54 master
 
 - **[Kotlin / KMP / Jetpack Compose](frontend-skills/kotlin-kmp-jetpack-compose-mastery-skill/)**
   Shared-module strategy, Compose UI state, navigation, offline sync, rendering discipline, and release compatibility.
+
+- **[Next.js](frontend-skills/nextjs-mastery-skill/)**
+  App Router architecture, server/client boundaries, caching and revalidation, route handlers, streaming, and production debugging.
+
+- **[SvelteKit](frontend-skills/sveltekit-mastery-skill/)**
+  Route strategy, load functions, form actions, progressive enhancement, state boundaries, and deployment-aware debugging.
+
+- **[Angular](frontend-skills/angular-mastery-skill/)**
+  Enterprise frontend architecture, RxJS discipline, routing and guards, state boundaries, and production operations.
+
+- **[Ionic + Capacitor](frontend-skills/ionic-capacitor-mastery-skill/)**
+  Hybrid app architecture, native plugin governance, offline behavior, runtime tradeoffs, and mobile store operations.
+
+- **[Astro](frontend-skills/astro-mastery-skill/)**
+  Content architecture, islands strategy, hydration discipline, CMS integration, and content-driven frontend operations.
+
+- **[Remix](frontend-skills/remix-mastery-skill/)**
+  Nested routing, loaders/actions, progressive enhancement, resilience, and route-focused debugging.
+
+- **[Tauri](frontend-skills/tauri-mastery-skill/)**
+  Desktop Rust/webview boundaries, local resource safety, updater strategy, desktop security, and packaging operations.
+
+- **[Design System](frontend-skills/design-system-mastery-skill/)**
+  Tokens, component APIs, accessibility, governance, compatibility, and multi-team adoption strategy.
+
+- **[Frontend Performance](frontend-skills/frontend-performance-mastery-skill/)**
+  Measurement discipline, bundle strategy, hydration cost, route performance, and regression prevention across frameworks.
+
+- **[Frontend Security](frontend-skills/frontend-security-mastery-skill/)**
+  Trust boundaries, XSS prevention, auth/token handling, CSP, embedded app risks, and security incident response.
 
 ## 🗃️ Data Skills
 
@@ -486,13 +516,23 @@ claude-codex-skills-directory/
 │   └── spark-mastery-skill/
 
 ├── frontend-skills/
+│   ├── angular-mastery-skill/
+│   ├── astro-mastery-skill/
+│   ├── design-system-mastery-skill/
 │   ├── flutter-mastery-skill/
+│   ├── frontend-performance-mastery-skill/
+│   ├── frontend-security-mastery-skill/
+│   ├── ionic-capacitor-mastery-skill/
 │   ├── kotlin-kmp-jetpack-compose-mastery-skill/
+│   ├── nextjs-mastery-skill/
 │   ├── nuxtjs-mastery-skill/
 │   ├── react-native-expo-mastery-skill/
 │   ├── react-tanstack-mastery-skill/
+│   ├── remix-mastery-skill/
 │   ├── solidjs-solidstart-mastery-skill/
-│   └── swift-ios-mastery-skill/
+│   ├── sveltekit-mastery-skill/
+│   ├── swift-ios-mastery-skill/
+│   └── tauri-mastery-skill/
 │
 └── devops-skills/
     ├── ansible-mastery-skill/
