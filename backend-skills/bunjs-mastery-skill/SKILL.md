@@ -63,6 +63,20 @@ src/
 └── types/
 ```
 
+- Keep `index.ts` for bootstrap only; initialize config, logger, app, and shutdown wiring there.
+- Keep framework-specific request/response types near the transport boundary.
+- Keep service and repository layers free from Hono/Elysia context objects.
+- Prefer one explicit composition root instead of hidden module-level singletons.
+
+## Workflow (Feature / Refactor / Bug)
+
+1. Reproduce the behavior or encode it in tests.
+2. Decide boundaries: transport, validation, use-case, persistence, outbound integrations.
+3. Define runtime behavior: timeout, retry, cancellation, overload, and shutdown posture.
+4. Implement the smallest end-to-end slice.
+5. Validate tests, type checks, linting, and container build if deployment uses Docker.
+6. Review observability, rollout safety, and dependency-failure behavior before release.
+
 ## Validation Commands
 
 - Run `bun install --frozen-lockfile`.
@@ -79,6 +93,9 @@ src/
 - Do not leak stack traces, secrets, or database errors to clients.
 - Prefer `Bun.password` for password hashing instead of legacy `bcrypt` stacks unless compatibility requires otherwise.
 - Make shutdown explicit: stop accepting traffic, drain in-flight work, and close DB/Redis clients.
+- Treat all outbound IO as failure-prone: set deadlines, connection limits, and fallback behavior.
+- Separate online request traffic from background jobs and expensive fan-out work.
+- Be explicit about file upload limits, streaming boundaries, and webhook authenticity checks.
 
 ## Docker & Deployment Defaults
 
@@ -95,11 +112,27 @@ src/
 - E2E tests only for critical user flows.
 - Keep mocks small and close to the consumer boundary.
 
+## Code Review Checklist
+
+- Confirm request validation, config validation, and response mapping happen at boundaries.
+- Confirm services do not depend directly on web framework context or global mutable state.
+- Confirm all external dependencies have timeout and failure semantics defined.
+- Confirm structured logs, health/readiness endpoints, and shutdown hooks exist for deployable services.
+- Confirm Docker images and CI steps are reproducible, pinned, and non-root where applicable.
+
+## Decision Heuristics
+
+- Choose Bun when JavaScript/TypeScript productivity matters and the workload is primarily IO-bound.
+- Prefer Bun when startup time, single-runtime simplicity, and modern Web APIs improve delivery speed without sacrificing operability.
+- Prefer another stack when the service is CPU-heavy, needs a very mature enterprise framework ecosystem, or depends on packages that are still Node-only in practice.
+
 ## References
 
 - Clean code patterns: [references/clean-code-patterns.md](references/clean-code-patterns.md)
+- Agent instructions for backend tasks: [references/agent-instructions-for-backend-tasks.md](references/agent-instructions-for-backend-tasks.md)
+- Backend cost and performance tradeoffs: [references/backend-cost-performance-tradeoffs.md](references/backend-cost-performance-tradeoffs.md)
+- Dependency failure decision tree: [references/dependency-failure-decision-tree.md](references/dependency-failure-decision-tree.md)
 - Debugging guide: [references/debugging-guide.md](references/debugging-guide.md)
-- Docker patterns: [references/docker-patterns.md](references/docker-patterns.md)
 - Library arsenal: [references/library-arsenal.md](references/library-arsenal.md)
 - Bun architecture decision framework: [references/bun-architecture-decision-framework.md](references/bun-architecture-decision-framework.md)
 - Production decision matrix: [references/production-decision-matrix.md](references/production-decision-matrix.md)
@@ -113,6 +146,8 @@ src/
 - Background jobs and queues: [references/background-jobs-and-queues.md](references/background-jobs-and-queues.md)
 - Background processing and consumers: [references/background-processing-and-consumers.md](references/background-processing-and-consumers.md)
 - Contract validation and response mapping: [references/contract-validation-and-response-mapping.md](references/contract-validation-and-response-mapping.md)
+- Capacity planning and load shedding: [references/capacity-planning-and-load-shedding.md](references/capacity-planning-and-load-shedding.md)
+- Dependency timeouts and abort strategy: [references/dependency-timeouts-and-abort-strategy.md](references/dependency-timeouts-and-abort-strategy.md)
 - Schema contracts and validation: [references/schema-contracts-and-validation.md](references/schema-contracts-and-validation.md)
 - Database and transactions: [references/database-and-transactions.md](references/database-and-transactions.md)
 - API evolution and versioning: [references/api-evolution-and-versioning.md](references/api-evolution-and-versioning.md)
@@ -121,10 +156,21 @@ src/
 - Bun runtime operability: [references/bun-runtime-operability.md](references/bun-runtime-operability.md)
 - Realtime and WebSocket patterns: [references/realtime-and-websocket-patterns.md](references/realtime-and-websocket-patterns.md)
 - Security and outbound HTTP: [references/security-and-outbound-http.md](references/security-and-outbound-http.md)
+- SLO, error budget, and release gates: [references/slo-error-budget-and-release-gates.md](references/slo-error-budget-and-release-gates.md)
 - Testing strategy: [references/testing-strategy.md](references/testing-strategy.md)
+- Webhooks, idempotency, and retries: [references/webhooks-idempotency-and-retries.md](references/webhooks-idempotency-and-retries.md)
 - Reliability and operations: [references/reliability-and-operations.md](references/reliability-and-operations.md)
 - Incident response playbook: [references/incident-response-playbook.md](references/incident-response-playbook.md)
 - Multi-tenant rate limits: [references/multi-tenant-and-rate-limits.md](references/multi-tenant-and-rate-limits.md)
+- Operational smells and red flags: [references/operational-smells-and-red-flags.md](references/operational-smells-and-red-flags.md)
+- Outage triage, first 15 minutes: [references/outage-triage-first-15-minutes.md](references/outage-triage-first-15-minutes.md)
+- Principal backend code review playbook: [references/principal-backend-code-review-playbook.md](references/principal-backend-code-review-playbook.md)
+- Queue poison message and dead-letter playbook: [references/queue-poison-message-and-dead-letter-playbook.md](references/queue-poison-message-and-dead-letter-playbook.md)
+- Review checklists by change type: [references/review-checklists-by-change-type.md](references/review-checklists-by-change-type.md)
+- Safe rollout patterns for high-traffic services: [references/safe-rollout-patterns-for-high-traffic-services.md](references/safe-rollout-patterns-for-high-traffic-services.md)
+- Service decomposition and boundary decisions: [references/service-decomposition-and-boundary-decisions.md](references/service-decomposition-and-boundary-decisions.md)
+- Tenant fairness and noisy neighbor playbook: [references/tenant-fairness-and-noisy-neighbor-playbook.md](references/tenant-fairness-and-noisy-neighbor-playbook.md)
+- Zero-downtime schema and contract migrations: [references/zero-downtime-schema-and-contract-migrations.md](references/zero-downtime-schema-and-contract-migrations.md)
 
 ## Scripts & Assets
 

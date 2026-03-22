@@ -90,6 +90,32 @@ end
 - Run `mix phx.routes` and endpoint smoke checks for Phoenix applications.
 - Run release smoke tests if the application ships as an OTP release.
 
+## Recommended Service Shape
+
+```text
+lib/my_app/
+├── application.ex
+├── telemetry.ex
+├── domain/
+│   ├── users.ex
+│   └── errors.ex
+├── services/
+│   └── create_user.ex
+├── adapters/
+│   ├── repo.ex
+│   ├── http_client.ex
+│   └── queue_publisher.ex
+└── web/
+    ├── router.ex
+    ├── controllers/
+    └── plugs/
+```
+
+- Keep `application.ex` focused on supervision and startup wiring.
+- Keep Phoenix controllers, channels, or plugs thin; move orchestration into domain/service modules.
+- Make process ownership explicit: know which module owns a queue, cache, subscription, or outbound client.
+- Prefer named responsibilities over generic “server” modules that accumulate unrelated state.
+
 ## OTP and Concurrency Guardrails
 
 - Every long-lived process should have a clear owner and supervision policy.
@@ -114,6 +140,14 @@ end
 - Be explicit about node discovery, cookie management, and cluster partitions.
 - Treat netsplits, mailbox buildup, and dependency slowness as first-class failure modes.
 - Expose health checks, readiness, telemetry, and trace correlation for incident response.
+- Make overload posture explicit: backpressure, queueing, dropping, or shedding must be intentional.
+
+## Debugging and Incident Heuristics
+
+- Inspect mailbox size, scheduler utilization, and restart intensity before assuming the bug is in business logic.
+- Differentiate between one noisy process, one bad supervision subtree, and whole-node resource pressure.
+- When a BEAM system looks “slow”, ask whether the bottleneck is message backlog, dependency latency, serialization, or DB pool contention.
+- Use telemetry, logs, and trace correlation to connect inbound requests, spawned work, and downstream failures.
 
 ## Security Checklist (Minimum)
 
@@ -122,6 +156,14 @@ end
 - Use least-privilege credentials and role separation.
 - Harden admin endpoints, LiveDashboard, and remote shell access.
 - Audit distributed node trust boundaries before enabling clustering across networks.
+
+## Code Review Checklist
+
+- Confirm each long-lived process has a clear responsibility, owner, and supervision policy.
+- Confirm mailbox growth and fan-out concurrency are bounded for the expected traffic shape.
+- Confirm controllers, channels, and consumers delegate domain work instead of becoming orchestration blobs.
+- Confirm dependency failures map to explicit timeout/retry/degradation semantics.
+- Confirm telemetry and incident signals are sufficient to debug a production failure without attaching a shell first.
 
 ## Decision Heuristics
 
@@ -142,12 +184,26 @@ Prefer another backend stack when:
 
 - OTP design and supervision boundaries: [references/otp-design.md](references/otp-design.md)
 - Service boundaries and domain design: [references/service-boundaries-and-domain-design.md](references/service-boundaries-and-domain-design.md)
+- Agent instructions for backend tasks: [references/agent-instructions-for-backend-tasks.md](references/agent-instructions-for-backend-tasks.md)
+- Backend cost and performance tradeoffs: [references/backend-cost-performance-tradeoffs.md](references/backend-cost-performance-tradeoffs.md)
+- Dependency failure decision tree: [references/dependency-failure-decision-tree.md](references/dependency-failure-decision-tree.md)
 - Failure stories and recovery patterns: [references/failure-stories-and-recovery-patterns.md](references/failure-stories-and-recovery-patterns.md)
 - Ecto transactions and outbox: [references/ecto-transactions-and-outbox.md](references/ecto-transactions-and-outbox.md)
 - Phoenix and service boundaries: [references/phoenix-and-boundaries.md](references/phoenix-and-boundaries.md)
 - Broadway, GenStage, and consumer pipelines: [references/broadway-genstage-and-consumers.md](references/broadway-genstage-and-consumers.md)
 - Distributed systems and operations: [references/distributed-systems-and-operations.md](references/distributed-systems-and-operations.md)
+- Mailbox pressure and backpressure: [references/mailbox-pressure-and-backpressure.md](references/mailbox-pressure-and-backpressure.md)
+- Multi-region and failover strategy: [references/multi-region-and-failover-strategy.md](references/multi-region-and-failover-strategy.md)
 - Multi-tenant BEAM systems: [references/multi-tenant-beam-systems.md](references/multi-tenant-beam-systems.md)
+- Graceful degradation and dependency failure: [references/graceful-degradation-and-dependency-failure.md](references/graceful-degradation-and-dependency-failure.md)
 - Release engineering and deploy safety: [references/release-engineering-and-deploy-safety.md](references/release-engineering-and-deploy-safety.md)
-- Telemetry and observability: [references/telemetry-and-observability.md](references/telemetry-and-observability.md)
+- SLO, error budgets, and incident governance: [references/slo-error-budgets-and-incident-governance.md](references/slo-error-budgets-and-incident-governance.md)
+- Outage triage, first 15 minutes: [references/outage-triage-first-15-minutes.md](references/outage-triage-first-15-minutes.md)
+- Principal backend code review playbook: [references/principal-backend-code-review-playbook.md](references/principal-backend-code-review-playbook.md)
+- Queue poison message and dead-letter playbook: [references/queue-poison-message-and-dead-letter-playbook.md](references/queue-poison-message-and-dead-letter-playbook.md)
 - Incident runbooks: [references/incident-runbooks.md](references/incident-runbooks.md)
+- Review checklists by change type: [references/review-checklists-by-change-type.md](references/review-checklists-by-change-type.md)
+- Safe rollout patterns for high-traffic services: [references/safe-rollout-patterns-for-high-traffic-services.md](references/safe-rollout-patterns-for-high-traffic-services.md)
+- Service decomposition and boundary decisions: [references/service-decomposition-and-boundary-decisions.md](references/service-decomposition-and-boundary-decisions.md)
+- Tenant fairness and noisy neighbor playbook: [references/tenant-fairness-and-noisy-neighbor-playbook.md](references/tenant-fairness-and-noisy-neighbor-playbook.md)
+- Zero-downtime schema and contract migrations: [references/zero-downtime-schema-and-contract-migrations.md](references/zero-downtime-schema-and-contract-migrations.md)

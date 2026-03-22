@@ -76,8 +76,38 @@ defer worker.join();
 - Run `zig test src/main.zig` or the relevant test targets.
 - Run `zig build test` if the project uses a build graph.
 - Run `zig build -Doptimize=ReleaseSafe` before release validation.
+- Run `zig build -Doptimize=ReleaseFast` only for benchmark or release candidate comparison, not as the first debugging posture.
 - Run smoke tests against the compiled binary in a production-like environment.
 - Run container build validation if the service is deployed via Docker.
+
+## Recommended Service Shape
+
+```text
+src/
+├── main.zig
+├── app/
+│   ├── config.zig
+│   ├── bootstrap.zig
+│   └── shutdown.zig
+├── transport/
+│   ├── http.zig
+│   └── dto.zig
+├── domain/
+│   ├── user_service.zig
+│   └── errors.zig
+├── adapters/
+│   ├── postgres.zig
+│   ├── redis.zig
+│   └── outbound_http.zig
+└── observability/
+    ├── logging.zig
+    └── metrics.zig
+```
+
+- Keep `main.zig` limited to startup, dependency wiring, and shutdown choreography.
+- Separate protocol parsing from business rules so malformed transport input never pollutes domain logic.
+- Keep allocator ownership visible at module boundaries, especially in adapters and parsing-heavy code.
+- Prefer a modular monolith layout until there is real evidence for more process or package fragmentation.
 
 ## Backend Architecture Guardrails
 
@@ -95,6 +125,16 @@ defer worker.join();
 - Implement graceful shutdown: stop accepting traffic, drain in-flight work, release resources, and join workers.
 - Prefer idempotent handlers where retries may occur.
 - Benchmark hot paths before micro-optimizing.
+- Make overload behavior explicit: reject, queue, degrade, or shed load instead of letting memory pressure decide for you.
+- Distinguish programmer bugs from recoverable runtime faults; not every failure should terminate the process.
+
+## Debugging and Performance Playbook
+
+- Reproduce correctness issues under `Debug` or `ReleaseSafe` before chasing peak throughput.
+- Investigate allocator churn, buffer growth, serialization overhead, and lock contention before rewriting architecture.
+- Capture representative request sizes and concurrency levels; microbenchmarks without production-like inputs are misleading.
+- When debugging leaks or ownership mistakes, trace who allocates, who frees, and what the failure path does under `errdefer`.
+- Use production-safe logging fields and counters so incidents can answer: what failed, for whom, under what load, and against which dependency.
 
 ## Security Checklist (Minimum)
 
@@ -104,31 +144,48 @@ defer worker.join();
 - Use parameterized queries and least-privilege credentials for data stores.
 - Keep unsafe FFI boundaries isolated and well-tested.
 
+## Code Review Checklist
+
+- Confirm allocator ownership is obvious for every non-trivial buffer or parsed payload.
+- Confirm all outbound IO has timeout, retry, and cancellation posture defined.
+- Confirm background workers and threads have a clear owner, stop signal, and error-reporting path.
+- Confirm transport handlers validate size and shape before touching domain logic.
+- Confirm logs, metrics, and health endpoints are sufficient for first-response incident debugging.
+- Confirm `unsafe`-like FFI boundaries are isolated and do not leak undefined behavior into the wider service.
+
 ## Decision Heuristics
 
-```text
-Choose Zig when:
-- predictable memory behavior matters
-- latency and binary size matter
-- you need more control than Go/JavaScript typically provide
-- C interop is part of the system boundary
-
-Prefer another backend stack when:
-- the team needs a richer web ecosystem immediately
-- delivery speed depends on mature framework conventions
-- the problem is primarily CRUD with little systems-level pressure
-```
+- Use Zig for backend services when control over memory, latency, binary shape, or C interoperability is central to the problem.
+- Prefer Zig when the system has strict limits, high fan-in/fan-out efficiency concerns, or sensitive allocator behavior that must stay explicit.
+- Avoid Zig when the main value comes from rapid CRUD delivery, mature batteries-included frameworks, or a large pool of application engineers with no systems background.
+- Prefer Zig selectively for critical components if the rest of the platform benefits from a more conventional application stack.
 
 ## References
 
 - Architecture and dependency direction: [references/architecture.md](references/architecture.md)
 - Service architecture decision framework: [references/service-architecture-decision-framework.md](references/service-architecture-decision-framework.md)
+- Agent instructions for backend tasks: [references/agent-instructions-for-backend-tasks.md](references/agent-instructions-for-backend-tasks.md)
+- Backend cost and performance tradeoffs: [references/backend-cost-performance-tradeoffs.md](references/backend-cost-performance-tradeoffs.md)
+- Dependency failure decision tree: [references/dependency-failure-decision-tree.md](references/dependency-failure-decision-tree.md)
+- Operational smells and red flags: [references/operational-smells-and-red-flags.md](references/operational-smells-and-red-flags.md)
 - Anti-patterns and operational smells: [references/anti-patterns-and-operational-smells.md](references/anti-patterns-and-operational-smells.md)
 - Allocator strategy and memory ownership: [references/allocators-and-memory.md](references/allocators-and-memory.md)
+- Allocator debugging and memory leaks: [references/allocator-debugging-and-memory-leaks.md](references/allocator-debugging-and-memory-leaks.md)
 - Data contracts and versioning: [references/data-contracts-and-versioning.md](references/data-contracts-and-versioning.md)
 - HTTP service design and reliability: [references/http-and-reliability.md](references/http-and-reliability.md)
 - FFI and unsafe boundary control: [references/ffi-and-unsafe-boundaries.md](references/ffi-and-unsafe-boundaries.md)
+- Request sizing and overload control: [references/request-sizing-and-overload-control.md](references/request-sizing-and-overload-control.md)
+- SLO, error budgets, and service governance: [references/slo-error-budgets-and-service-governance.md](references/slo-error-budgets-and-service-governance.md)
+- Tenant isolation and fairness: [references/tenant-isolation-and-fairness.md](references/tenant-isolation-and-fairness.md)
 - Workers and background jobs: [references/workers-and-background-jobs.md](references/workers-and-background-jobs.md)
 - Observability and incidents: [references/observability-and-incidents.md](references/observability-and-incidents.md)
+- Outage triage, first 15 minutes: [references/outage-triage-first-15-minutes.md](references/outage-triage-first-15-minutes.md)
+- Principal backend code review playbook: [references/principal-backend-code-review-playbook.md](references/principal-backend-code-review-playbook.md)
+- Queue poison message and dead-letter playbook: [references/queue-poison-message-and-dead-letter-playbook.md](references/queue-poison-message-and-dead-letter-playbook.md)
+- Review checklists by change type: [references/review-checklists-by-change-type.md](references/review-checklists-by-change-type.md)
 - Rollouts and release safety: [references/rollouts-and-release-safety.md](references/rollouts-and-release-safety.md)
+- Safe rollout patterns for high-traffic services: [references/safe-rollout-patterns-for-high-traffic-services.md](references/safe-rollout-patterns-for-high-traffic-services.md)
+- Service decomposition and boundary decisions: [references/service-decomposition-and-boundary-decisions.md](references/service-decomposition-and-boundary-decisions.md)
+- Tenant fairness and noisy neighbor playbook: [references/tenant-fairness-and-noisy-neighbor-playbook.md](references/tenant-fairness-and-noisy-neighbor-playbook.md)
 - Testing and debugging: [references/testing-and-debugging.md](references/testing-and-debugging.md)
+- Zero-downtime schema and contract migrations: [references/zero-downtime-schema-and-contract-migrations.md](references/zero-downtime-schema-and-contract-migrations.md)
