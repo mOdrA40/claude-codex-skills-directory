@@ -130,6 +130,7 @@ src/
 
 - Clean code patterns: [references/clean-code-patterns.md](references/clean-code-patterns.md)
 - Agent instructions for backend tasks: [references/agent-instructions-for-backend-tasks.md](references/agent-instructions-for-backend-tasks.md)
+- API and event schema compatibility matrix: [references/api-event-schema-compatibility-matrix.md](references/api-event-schema-compatibility-matrix.md)
 - Backend cost and performance tradeoffs: [references/backend-cost-performance-tradeoffs.md](references/backend-cost-performance-tradeoffs.md)
 - Dependency failure decision tree: [references/dependency-failure-decision-tree.md](references/dependency-failure-decision-tree.md)
 - Debugging guide: [references/debugging-guide.md](references/debugging-guide.md)
@@ -164,11 +165,15 @@ src/
 - Multi-tenant rate limits: [references/multi-tenant-and-rate-limits.md](references/multi-tenant-and-rate-limits.md)
 - Operational smells and red flags: [references/operational-smells-and-red-flags.md](references/operational-smells-and-red-flags.md)
 - Outage triage, first 15 minutes: [references/outage-triage-first-15-minutes.md](references/outage-triage-first-15-minutes.md)
+- Backend incident postmortem patterns: [references/backend-incident-postmortem-patterns.md](references/backend-incident-postmortem-patterns.md)
+- High-risk change preflight checklist: [references/high-risk-change-preflight-checklist.md](references/high-risk-change-preflight-checklist.md)
 - Principal backend code review playbook: [references/principal-backend-code-review-playbook.md](references/principal-backend-code-review-playbook.md)
 - Queue poison message and dead-letter playbook: [references/queue-poison-message-and-dead-letter-playbook.md](references/queue-poison-message-and-dead-letter-playbook.md)
+- Request path vs background path separation: [references/request-path-vs-background-path-separation.md](references/request-path-vs-background-path-separation.md)
 - Review checklists by change type: [references/review-checklists-by-change-type.md](references/review-checklists-by-change-type.md)
 - Safe rollout patterns for high-traffic services: [references/safe-rollout-patterns-for-high-traffic-services.md](references/safe-rollout-patterns-for-high-traffic-services.md)
 - Service decomposition and boundary decisions: [references/service-decomposition-and-boundary-decisions.md](references/service-decomposition-and-boundary-decisions.md)
+- Stateful vs stateless service decisions: [references/stateful-vs-stateless-service-decisions.md](references/stateful-vs-stateless-service-decisions.md)
 - Tenant fairness and noisy neighbor playbook: [references/tenant-fairness-and-noisy-neighbor-playbook.md](references/tenant-fairness-and-noisy-neighbor-playbook.md)
 - Zero-downtime schema and contract migrations: [references/zero-downtime-schema-and-contract-migrations.md](references/zero-downtime-schema-and-contract-migrations.md)
 
